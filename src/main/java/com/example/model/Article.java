@@ -8,11 +8,8 @@ public class Article extends Common {
 
     private String title;
 
-    public Article() { }
-
     public Article(String title) throws ModelException {
-        if (title.length() == 0)
-            throw new ModelException(ModelException.ARTICLE_EMPTY);
+        super();
         this.title = title;
     }
 
@@ -27,6 +24,12 @@ public class Article extends Common {
     @Override
     public String getValueForBox() {
         return title;
+    }
+
+    @Override
+    public void checkOnException() throws ModelException {
+        if (title.length() == 0)
+            throw new ModelException(ModelException.TITLE_EMPTY);
     }
 
     @Override
