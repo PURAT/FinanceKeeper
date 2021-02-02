@@ -1,7 +1,6 @@
 package com.example.model;
 
 import com.example.exception.ModelException;
-import javafx.scene.shape.Arc;
 
 import java.util.Date;
 

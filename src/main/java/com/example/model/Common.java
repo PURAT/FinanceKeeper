@@ -12,7 +12,7 @@ public abstract class Common {
 
     public void postEdit() { }
 
-    public void postARemove() { }
+    public void postRemove() { }
 
     public abstract String getValueForBox();
 
