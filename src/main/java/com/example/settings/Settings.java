@@ -38,7 +38,6 @@ public class Settings {
         } catch (IOException e) {
             save();
         }
-
     }
 
     public static File getFileSave() {
