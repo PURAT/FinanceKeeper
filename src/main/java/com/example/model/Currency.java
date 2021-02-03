@@ -15,7 +15,7 @@ public class Currency extends Common {
         super();
         this.title = title;
         this.code = code;
-        this.rate = rate; 
+        this.rate = rate;
         this.isOn = isOn;
         this.isBase = isBase;
     }

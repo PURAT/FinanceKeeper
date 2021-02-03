@@ -23,9 +23,6 @@ public final class Constants {
     public static final String NOVEMBER = "Ноябрь";
     public static final String DECEMBER = "Декабрь";
 
-    // Paths
-    public static final String PATH_ROBOTO_LIGHT = "fonts/roboto/Roboto-Light.ttf";
-
     // Errors
     public static final String ERROR_TITLE_EMPTY = "Вы не ввели название!";
     public static final String ERROR_IS_EXISTS = "Такая запись не существует!";
