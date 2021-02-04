@@ -1,6 +1,5 @@
 package com.example.saveload;
 
-import com.example.exception.ModelException;
 import com.example.model.*;
 
 import java.util.ArrayList;
