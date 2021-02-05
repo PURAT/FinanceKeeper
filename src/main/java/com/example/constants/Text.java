@@ -1,6 +1,6 @@
 package com.example.constants;
 
-public final class Constants {
+public final class Text {
     public static final String PROGRAM_NAME = "Домашняя бухгалтерия";
 
     // Menu items
@@ -10,6 +10,13 @@ public final class Constants {
     public static final String MENU_HELP = "Помощь";
 
     // Months
+    // error ???
+    //public static String[] MONTHS = {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
+
+    public static String[] getMonths() {
+        return new String[] {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
+    }
+
     public static final String JANUARY = "Январь";
     public static final String FEBRUARY = "Февраль";
     public static final String MARCH = "Март";
@@ -35,4 +42,7 @@ public final class Constants {
     public static final String ERROR_AMOUNT_FORMAT = "Неккоректный формат суммы!";
     public static final String ERROR_NO_BASE_CURRENCY = "Необходимо выбрать базовую валюту!";
 
+    // Answers
+    public static final String YES = "Да";
+    public static final String NO = "Нет";
 }

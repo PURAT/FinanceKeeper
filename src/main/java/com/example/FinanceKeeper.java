@@ -1,8 +1,10 @@
 package com.example;
 
+import com.example.util.Formatter;
+
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,6 +14,7 @@ import static com.example.settings.Settings.PATH_ROBOTO_LIGHT;
 public class FinanceKeeper {
     public static void main(String[] args) {
         init();
+        System.out.println(Formatter.formatDateMonthToString(new Date()));
     }
 
     private static void init() {

@@ -18,12 +18,6 @@ public final class Settings {
     public static File FILE_SAVE = new File("saves/default.fkp");
     public static final File PATH_ROBOTO_LIGHT = new File("fonts/roboto/Roboto-Light.ttf");
 
-    public static final String FORMAT_AMOUNT = "%.2f";
-    public static final String FORMAT_RATE = "%.4f";
-    public static final String FORMAT_DATE = "dd.MM.yyyy";
-    public static final String FORMAT_DATE_MONTH = "MMMM yyyy";
-    public static final String FORMAT_DATE_YEAR = "yyyy";
-
     public static final String[] CURRENCIES_CODES = new String[] {"RUB", "USD", "EUR", "BYN", "UAH"};
 
     public static void init() {

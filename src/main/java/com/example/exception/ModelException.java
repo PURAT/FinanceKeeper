@@ -1,6 +1,6 @@
 package com.example.exception;
 
-import static com.example.constants.Constants.*;
+import static com.example.constants.Text.*;
 
 public class ModelException extends Exception {
     public static final int TITLE_EMPTY = 0;
