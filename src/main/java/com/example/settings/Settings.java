@@ -15,7 +15,7 @@ public final class Settings {
     public static final String SAVE_FILE_EXT = "fkp";
 
     public static final File FILE_SETTINGS = new File("saves/settings.ini");
-    public static File FILE_SAVE = new File("saves/default.fkp");
+    private static File FILE_SAVE = new File("saves/default.fkp");
     public static final File PATH_ROBOTO_LIGHT = new File("fonts/roboto/Roboto-Light.ttf");
 
     public static final String[] CURRENCIES_CODES = new String[] {"RUB", "USD", "EUR", "BYN", "UAH"};
