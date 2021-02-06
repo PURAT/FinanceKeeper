@@ -48,7 +48,9 @@ public class SaveData {
             @Override
             public int compare(Currency c1, Currency c2) {
                 if (c1.isBase()) return -1;
+                if (c2.isBase()) return 1;
                 if (c1.isOn()) return -1;
+                if (c2.isOn()) return 1;
                 return c1.getTitle().compareToIgnoreCase(c2.getTitle());
             }
         });
