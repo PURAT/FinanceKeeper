@@ -1,8 +1,12 @@
 package com.example.saveload;
 
+import com.example.exception.ModelException;
 import com.example.model.*;
+import com.example.util.DateFilter;
+import com.sun.java.accessibility.util.Translator;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class SaveData {
@@ -15,12 +19,39 @@ public class SaveData {
     private List<Transaction> transactions = new ArrayList<>();
     private List<Transfer> transfers = new ArrayList<>();
 
-    private SaveData() { }
+    private final DateFilter dateFilter;
+    private Common oldCommon;
+    private boolean isSaved;
 
-    public static SaveData getInstance() {
-        if (instance == null)
-            instance = new SaveData();
-        return instance;
+    private SaveData() {
+        load();
+        dateFilter = new DateFilter();
+        isSaved = true;
+    }
+
+    public void load() {
+        SaveLoad.load(this);
+        sort();
+    }
+
+    public void save() {
+        SaveLoad.save(this);
+        isSaved = true;
+    }
+
+    private void sort() {
+        this.articles.sort((a1, a2) -> a1.getTitle().compareToIgnoreCase(a2.getTitle()));
+        this.accounts.sort((a1, a2) -> a1.getTitle().compareToIgnoreCase(a2.getTitle()));
+        this.transactions.sort(Comparator.comparing(Transaction::getDate));
+        this.transfers.sort(Comparator.comparing(Transfer::getDate));
+        this.currencies.sort(new Comparator<Currency>() {
+            @Override
+            public int compare(Currency c1, Currency c2) {
+                if (c1.isBase()) return -1;
+                if (c1.isOn()) return -1;
+                return c1.getTitle().compareToIgnoreCase(c2.getTitle());
+            }
+        });
     }
 
     public List<Account> getAccounts() {
@@ -39,6 +70,10 @@ public class SaveData {
         return transactions;
     }
 
+    public Common getOldCommon() {
+        return oldCommon;
+    }
+
     public List<Transfer> getTransfers() {
         return transfers;
     }
@@ -49,6 +84,56 @@ public class SaveData {
                 return currency;
         }
         //fixme
+        return null;
+    }
+
+    public ArrayList<Currency> getEnableCurrencies() {
+        ArrayList<Currency> list = new ArrayList<>();
+        for (Currency currency: currencies) {
+            if (currency.isOn())
+                list.add(currency);
+        }
+        return list;
+    }
+
+    public ArrayList<Transaction> getLastTransactions() {
+        ArrayList<Transaction> list = new ArrayList<>();
+        for (Transaction transaction: transactions) {
+            if (dateFilter.checkDate(transaction.getDate()))
+                list.add(transaction);
+        }
+        return list;
+    }
+
+    public ArrayList<Transfer> getLastTransfers() {
+        ArrayList<Transfer> list = new ArrayList<>();
+        for (Transfer transfer: transfers) {
+            if (dateFilter.checkDate(transfer.getDate()))
+                list.add(transfer);
+        }
+        return list;
+    }
+
+    public ArrayList<Transaction> getTransactionsByCount(int count) {
+        return new ArrayList<>(transactions.subList(0, Math.min(transactions.size(), count)));
+    }
+
+    public void add(Common oldCommon) throws ModelException {
+        List list = getList(oldCommon);
+        if (list.contains(oldCommon))
+            throw new ModelException(ModelException.IS_EXISTS);
+        list.add(oldCommon);
+        oldCommon.postAdd();
+        sort();
+        isSaved = false;
+    }
+
+    private List getList(Common data) {
+        if (data instanceof Article) return articles;
+        if (data instanceof Account) return accounts;
+        if (data instanceof Currency) return currencies;
+        if (data instanceof Transaction) return transactions;
+        if (data instanceof Transfer) return transfers;
         return null;
     }
 
@@ -70,5 +155,19 @@ public class SaveData {
 
     public void setTransfers(List<Transfer> transfers) {
         this.transfers = transfers;
+    }
+
+    public DateFilter getDateFilter() {
+        return dateFilter;
+    }
+
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    public static SaveData getInstance() {
+        if (instance == null)
+            instance = new SaveData();
+        return instance;
     }
 }

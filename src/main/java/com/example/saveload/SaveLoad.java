@@ -25,23 +25,20 @@ public class SaveLoad {
         }
     }
 
-    public static SaveData load() {
+    public static void load(SaveData data) {
         try {
             JAXBContext context = JAXBContext.newInstance(Wrapper.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
             Wrapper wrapper = (Wrapper) unmarshaller.unmarshal(Settings.getFileSave());
 
-            SaveData data = SaveData.getInstance();
             data.setAccounts(wrapper.getAccounts());
             data.setArticles(wrapper.getArticles());
             data.setCurrencies(wrapper.getCurrencies());
             data.setTransactions(wrapper.getTransactions());
             data.setTransfers(wrapper.getTransfers());
-            return data;
 
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-        return null;
     }
 }
