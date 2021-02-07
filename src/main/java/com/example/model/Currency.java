@@ -13,12 +13,13 @@ public class Currency extends Common {
     private boolean isBase;
 
     public Currency(String title, String code, double rate, boolean isOn, boolean isBase) throws ModelException {
-        super();
         this.title = title;
         this.code = code;
         this.rate = rate;
         this.isOn = isOn;
         this.isBase = isBase;
+
+        checkOnException();
     }
 
     public double getRateByCurrency(Currency currency) {

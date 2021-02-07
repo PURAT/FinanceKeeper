@@ -10,8 +10,9 @@ public class Article extends Common {
     private String title;
 
     public Article(String title) throws ModelException {
-        super();
         this.title = title;
+
+        checkOnException();
     }
 
     public String getTitle() {

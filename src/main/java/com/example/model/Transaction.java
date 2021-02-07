@@ -26,12 +26,13 @@ public class Transaction extends Common {
     }
 
     public Transaction(Account account, Article article, double amount, String notice, Date date) throws ModelException {
-        super();
         this.account = account;
         this.article = article;
         this.amount = amount;
         this.notice = notice;
         this.date = date;
+
+        checkOnException();
     }
 
     @Override

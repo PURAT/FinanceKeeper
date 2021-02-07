@@ -5,10 +5,6 @@ import com.example.saveload.SaveData;
 
 public abstract class Common {
 
-    public Common() throws ModelException {
-        checkOnException();
-    }
-
     public abstract void postAdd(SaveData data);
 
     public abstract void postEdit(SaveData data);

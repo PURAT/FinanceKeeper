@@ -14,10 +14,11 @@ public class Account extends Common {
     private double amount;
 
     public Account(String title, Currency currency, double startAmount) throws ModelException {
-        super();
         this.title = title;
         this.currency = currency;
         this.startAmount = startAmount;
+
+        checkOnException();
     }
 
     @Override

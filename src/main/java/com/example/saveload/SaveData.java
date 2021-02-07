@@ -11,7 +11,6 @@ import java.util.List;
 public class SaveData {
     private static SaveData instance;
 
-    //fixme
     private List<Account> accounts = new ArrayList<>();
     private List<Article> articles = new ArrayList<>();
     private List<Currency> currencies = new ArrayList<>();

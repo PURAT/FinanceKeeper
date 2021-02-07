@@ -10,3 +10,6 @@
 ## File-based project format:
 *.ipr
 *.iws
+
+# Generated project files
+/saves

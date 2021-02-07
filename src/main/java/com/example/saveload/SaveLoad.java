@@ -1,8 +1,11 @@
 package com.example.saveload;
 
 import com.example.settings.Settings;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 
-import javax.xml.bind.*;
 
 public class SaveLoad {
 
@@ -37,8 +40,8 @@ public class SaveLoad {
             data.setTransactions(wrapper.getTransactions());
             data.setTransfers(wrapper.getTransfers());
 
-        } catch (JAXBException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Файла для загрузки данных не существует!");
         }
     }
 }

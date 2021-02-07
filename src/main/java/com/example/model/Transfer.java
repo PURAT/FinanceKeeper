@@ -27,13 +27,14 @@ public class Transfer extends Common {
     }
 
     public Transfer(Account fromAccount, Account toAccount, double fromAmount, double toAmount, String notice, Date date) throws ModelException {
-        super();
         this.fromAccount = fromAccount;
         this.toAccount = toAccount;
         this.fromAmount = fromAmount;
         this.toAmount = toAmount;
         this.notice = notice;
         this.date = date;
+
+        checkOnException();
     }
 
     @Override
