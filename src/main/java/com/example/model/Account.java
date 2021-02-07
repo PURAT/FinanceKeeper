@@ -1,6 +1,7 @@
 package com.example.model;
 
 import com.example.exception.ModelException;
+import com.example.saveload.SaveData;
 
 import java.util.List;
 import java.util.Objects;
@@ -18,6 +19,29 @@ public class Account extends Common {
         this.currency = currency;
         this.startAmount = startAmount;
     }
+
+    @Override
+    public void postAdd(SaveData data) {
+        setAmountFromTransactionsAndTransfers(data.getTransactions(), data.getTransfers());
+    }
+
+    @Override
+    public void postEdit(SaveData data) {
+        for (Transaction transaction: data.getTransactions()) {
+            if (transaction.getAccount().equals(data.getOldCommon()))
+                transaction.setAccount(this);
+        }
+        for (Transfer transfer: data.getTransfers()) {
+            if (transfer.getFromAccount().equals(data.getOldCommon()))
+                transfer.setFromAccount(this);
+            if (transfer.getToAccount().equals(data.getOldCommon()))
+                transfer.setToAccount(this);
+        }
+        setAmountFromTransactionsAndTransfers(data.getTransactions(), data.getTransfers());
+    }
+
+    @Override
+    public void postRemove(SaveData data) { }
 
     @Override
     public String getValueForBox() {

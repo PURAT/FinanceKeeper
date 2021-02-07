@@ -1,6 +1,7 @@
 package com.example.model;
 
 import com.example.exception.ModelException;
+import com.example.saveload.SaveData;
 
 public abstract class Common {
 
@@ -8,11 +9,11 @@ public abstract class Common {
         checkOnException();
     }
 
-    public void postAdd() { }
+    public abstract void postAdd(SaveData data);
 
-    public void postEdit() { }
+    public abstract void postEdit(SaveData data);
 
-    public void postRemove() { }
+    public abstract void postRemove(SaveData data);
 
     public abstract String getValueForBox();
 

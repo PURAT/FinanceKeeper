@@ -1,6 +1,7 @@
 package com.example.model;
 
 import com.example.exception.ModelException;
+import com.example.saveload.SaveData;
 
 import java.util.Date;
 
@@ -31,6 +32,27 @@ public class Transaction extends Common {
         this.amount = amount;
         this.notice = notice;
         this.date = date;
+    }
+
+    @Override
+    public void postAdd(SaveData data) {
+        setAmounts(data);
+    }
+
+    @Override
+    public void postEdit(SaveData data) {
+        setAmounts(data);
+    }
+
+    @Override
+    public void postRemove(SaveData data) {
+        setAmounts(data);
+    }
+
+    private void setAmounts(SaveData data) {
+        for (Account account: data.getAccounts()) {
+            account.setAmountFromTransactionsAndTransfers(data.getTransactions(), data.getTransfers());
+        }
     }
 
     @Override

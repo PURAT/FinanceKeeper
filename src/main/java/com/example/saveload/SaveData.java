@@ -3,7 +3,6 @@ package com.example.saveload;
 import com.example.exception.ModelException;
 import com.example.model.*;
 import com.example.util.DateFilter;
-import com.sun.java.accessibility.util.Translator;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -125,8 +124,25 @@ public class SaveData {
         if (list.contains(oldCommon))
             throw new ModelException(ModelException.IS_EXISTS);
         list.add(oldCommon);
-        oldCommon.postAdd();
+        oldCommon.postAdd(this);
         sort();
+        isSaved = false;
+    }
+
+    public void edit(Common oldData, Common newData) throws ModelException {
+        List list = getList(oldData);
+        if (list.contains(newData) && oldCommon != list.get(list.indexOf(newData)))
+            throw new ModelException(ModelException.IS_EXISTS);
+        list.set(list.indexOf(oldData), newData);
+        oldCommon = oldData;
+        newData.postEdit(this);
+        sort();
+        isSaved = false;
+    }
+
+    public void remove(Common oldData) {
+        getList(oldData).remove(oldData);
+        oldData.postRemove(this);
         isSaved = false;
     }
 
@@ -137,6 +153,17 @@ public class SaveData {
         if (data instanceof Transaction) return transactions;
         if (data instanceof Transfer) return transfers;
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "SaveData{" +
+                "accounts=" + accounts +
+                ", articles=" + articles +
+                ", currencies=" + currencies +
+                ", transactions=" + transactions +
+                ", transfers=" + transfers +
+                '}';
     }
 
     public void setAccounts(List<Account> accounts) {

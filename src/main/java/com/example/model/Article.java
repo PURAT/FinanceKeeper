@@ -1,6 +1,7 @@
 package com.example.model;
 
 import com.example.exception.ModelException;
+import com.example.saveload.SaveData;
 
 import java.util.Objects;
 
@@ -20,6 +21,20 @@ public class Article extends Common {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    @Override
+    public void postAdd(SaveData data) { }
+
+    @Override
+    public void postEdit(SaveData data) {
+        for (Transaction transaction: data.getTransactions()) {
+            if (transaction.getArticle().equals(data.getOldCommon()))
+                transaction.setArticle(this);
+        }
+    }
+
+    @Override
+    public void postRemove(SaveData data) { }
 
     @Override
     public String getValueForBox() {
