@@ -13,6 +13,8 @@ public class Transaction extends Common {
     private String notice;
     private Date date;
 
+    public Transaction() { }
+
     public Transaction(Account account, Article article, double amount) throws ModelException {
         this(account, article, amount, "", new Date());
     }

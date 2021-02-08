@@ -12,6 +12,8 @@ public class Currency extends Common {
     private boolean isOn;
     private boolean isBase;
 
+    public Currency() { }
+
     public Currency(String title, String code, double rate, boolean isOn, boolean isBase) throws ModelException {
         this.title = title;
         this.code = code;

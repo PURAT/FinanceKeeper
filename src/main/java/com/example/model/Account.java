@@ -13,6 +13,8 @@ public class Account extends Common {
     private double startAmount;
     private double amount;
 
+    public Account() { }
+
     public Account(String title, Currency currency, double startAmount) throws ModelException {
         this.title = title;
         this.currency = currency;

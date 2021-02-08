@@ -14,6 +14,8 @@ public class Transfer extends Common {
     private String notice;
     private Date date;
 
+    public Transfer() { }
+
     public Transfer(Account fromAccount, Account toAccount, double fromAmount, double toAmount, String notice) throws ModelException {
         this(fromAccount, toAccount, fromAmount, toAmount, notice, new Date());
     }
