@@ -18,15 +18,8 @@ public class FinanceKeeper {
 
     public static void main(String[] args) {
         init();
-        // generate models
-//        try {
-//            testModels();
-//        } catch (ModelException e) {
-//            e.getMessage();
-//        }
-
         SaveData data = SaveData.getInstance();
-        System.out.println(data);
+        System.out.println(data.getCurrencies());
     }
 
 

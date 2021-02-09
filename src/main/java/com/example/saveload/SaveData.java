@@ -2,11 +2,10 @@ package com.example.saveload;
 
 import com.example.exception.ModelException;
 import com.example.model.*;
+import com.example.model.Currency;
 import com.example.util.DateFilter;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class SaveData {
     private static SaveData instance;
@@ -83,8 +82,7 @@ public class SaveData {
             if (currency.isBase())
                 return currency;
         }
-        //fixme
-        return null;
+        return new Currency();
     }
 
     public ArrayList<Currency> getEnableCurrencies() {
@@ -152,6 +150,17 @@ public class SaveData {
         if (data instanceof Transaction) return transactions;
         if (data instanceof Transfer) return transfers;
         return null;
+    }
+
+    public void updateCurrencies() {
+        HashMap<String, Double> rates = RateCurrency.loadRates(this.getBaseCurrency());
+        for (Currency currency: currencies) {
+            currency.setRate(rates.get(currency.getCode()));
+        }
+
+        for (Account account: accounts) {
+            account.getCurrency().setRate(rates.get(account.getCurrency().getCode()));
+        }
     }
 
     @Override
