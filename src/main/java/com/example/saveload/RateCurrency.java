@@ -1,8 +1,6 @@
 package com.example.saveload;
 
-import com.example.constants.Text;
 import com.example.model.Currency;
-import com.example.settings.Settings;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

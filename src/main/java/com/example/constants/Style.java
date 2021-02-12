@@ -13,5 +13,5 @@ public final class Style {
 
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
 
-    public static final ImageIcon ICON_MAIN = new ImageIcon("images/main.png");
+    public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
 }

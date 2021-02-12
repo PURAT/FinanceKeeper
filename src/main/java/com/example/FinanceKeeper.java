@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.exception.ModelException;
+import com.example.gui.MainFrame;
 import com.example.model.*;
 import com.example.saveload.SaveData;
 
@@ -20,6 +21,9 @@ public class FinanceKeeper {
         init();
         SaveData data = SaveData.getInstance();
         System.out.println(data.getCurrencies());
+
+        MainFrame frame = new MainFrame();
+        frame.setVisible(true);
     }
 
 
