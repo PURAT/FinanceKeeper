@@ -6,7 +6,7 @@ import com.example.constants.Text;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame implements Refresh {
 
     private GridBagConstraints constraints;
 
@@ -31,5 +31,13 @@ public class MainFrame extends JFrame {
         constraints.anchor = GridBagConstraints.NORTH;
 
         setLocationRelativeTo(null);
+
+        pack();
+    }
+
+    @Override
+    public void refresh() {
+        SwingUtilities.updateComponentTreeUI(this);
+        pack();
     }
 }

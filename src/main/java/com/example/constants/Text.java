@@ -9,10 +9,6 @@ public final class Text {
     public static final String MENU_VIEW = "Вид";
     public static final String MENU_HELP = "Помощь";
 
-    // Months
-    // error ???
-    // public static final String[] MONTHS = {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
-
     public static String[] getMonths() {
         return new String[] {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
     }
