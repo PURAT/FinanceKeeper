@@ -19,8 +19,6 @@ public class FinanceKeeper {
 
     public static void main(String[] args) {
         init();
-        SaveData data = SaveData.getInstance();
-        System.out.println(data.getCurrencies());
 
         MainFrame frame = new MainFrame();
         frame.setVisible(true);

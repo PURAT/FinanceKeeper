@@ -9,6 +9,26 @@ public final class Text {
     public static final String MENU_VIEW = "Вид";
     public static final String MENU_HELP = "Помощь";
 
+    public static final String MENU_FILE_NEW = "Новый";
+    public static final String MENU_FILE_OPEN = "Открыть";
+    public static final String MENU_FILE_SAVE = "Сохранить";
+    public static final String MENU_FILE_UPDATE_CURRENCIES = "Обновить курс валют";
+    public static final String MENU_FILE_EXIT = "Выход";
+
+    public static final String MENU_EDIT_ADD = "Добавить";
+    public static final String MENU_EDIT_EDIT = "Изменить";
+    public static final String MENU_EDIT_DELETE = "Удалить";
+
+    public static final String MENU_VIEW_OVERVIEW = "Обзор";
+    public static final String MENU_VIEW_ACCOUNTS = "Счета";
+    public static final String MENU_VIEW_ARTICLES = "Статьи";
+    public static final String MENU_VIEW_TRANSACTIONS = "Транзакции";
+    public static final String MENU_VIEW_TRANSFERS = "Переводы";
+    public static final String MENU_VIEW_CURRENCIES = "Валюты";
+    public static final String MENU_VIEW_STATISTICS = "Статистика";
+
+    public static final String MENU_HELP_ABOUT = "О программе";
+
     public static String[] getMonths() {
         return new String[] {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
     }

@@ -2,6 +2,7 @@ package com.example.gui;
 
 import com.example.constants.Style;
 import com.example.constants.Text;
+import com.example.gui.menu.MainMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,12 +10,16 @@ import java.awt.*;
 public class MainFrame extends JFrame implements Refresh {
 
     private GridBagConstraints constraints;
+    private final MainMenu menubar;
 
     public MainFrame() {
         super(Text.PROGRAM_NAME);
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        menubar = new MainMenu(this);
+        setJMenuBar(menubar);
 
         setLayout(new GridBagLayout());
 
@@ -30,12 +35,14 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.NORTH;
 
+        pack();
         setLocationRelativeTo(null);
     }
 
     @Override
     public void refresh() {
         SwingUtilities.updateComponentTreeUI(this);
+        menubar.refresh();
         pack();
     }
 }
