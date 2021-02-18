@@ -29,6 +29,18 @@ public final class Text {
 
     public static final String MENU_HELP_ABOUT = "О программе";
 
+    public static final String TOOLBAR_OVERVIEW = "Обзор";
+    public static final String TOOLBAR_ACCOUNTS = "Счета";
+    public static final String TOOLBAR_ARTICLES = "Статьи";
+    public static final String TOOLBAR_TRANSACTIONS = "Транзакции";
+    public static final String TOOLBAR_TRANSFERS = "Переводы";
+    public static final String TOOLBAR_CURRENCIES = "Валюты";
+    public static final String TOOLBAR_STATISTICS = "Статистика";
+
+    public static final String TOOLBAR_ADD = "Добавить";
+    public static final String TOOLBAR_EDIT = "Изменить";
+    public static final String TOOLBAR_DELETE = "Удалить";
+
     public static String[] getMonths() {
         return new String[] {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
     }

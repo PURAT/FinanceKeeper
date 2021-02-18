@@ -3,6 +3,8 @@ package com.example.gui;
 import com.example.constants.Style;
 import com.example.constants.Text;
 import com.example.gui.menu.MainMenu;
+import com.example.gui.toolbar.EditToolbar;
+import com.example.gui.toolbar.MainToolbar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +13,7 @@ public class MainFrame extends JFrame implements Refresh {
 
     private GridBagConstraints constraints;
     private final MainMenu menubar;
+    private final MainToolbar toolbar;
 
     public MainFrame() {
         super(Text.PROGRAM_NAME);
@@ -29,6 +32,9 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.gridwidth = 2;
+
+        toolbar = new MainToolbar();
+        add(toolbar, constraints);
 
         // left panel
         constraints.gridy = 1;

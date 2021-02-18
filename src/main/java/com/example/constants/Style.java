@@ -7,11 +7,12 @@ import java.awt.*;
 public final class Style {
 
     public static final Color COLOR_BUTTON_BG_NORMAL = new Color(240, 240, 240);
-    public static final Color COLOR_BUTTON_BG_HOVER = Color.YELLOW;
+    public static final Color COLOR_BUTTON_BG_HOVER = Color.LIGHT_GRAY;
 
-    public static final Font FONT_BUTTON_TOOLBAR = new Font("Roboto-Light", Font.BOLD, 14);
+    public static final Font FONT_BUTTON = new Font("Roboto-Light", Font.BOLD, 14);
 
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
+    public static final EmptyBorder BORDER_TOOLBAR = new EmptyBorder(10, 10, 10, 10);
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
 
@@ -39,4 +40,19 @@ public final class Style {
     public static final ImageIcon ICON_MENU_VIEW_STATISTICS = new ImageIcon("images/menu_view_statistics.png");
     
     public static final ImageIcon ICON_MENU_HELP_ABOUT = new ImageIcon("images/menu_help_about.png");
+
+    public static final ImageIcon ICON_TOOLBAR_OVERVIEW = new ImageIcon("images/toolbar_view_overview.png");
+    public static final ImageIcon ICON_TOOLBAR_ACCOUNTS = new ImageIcon("images/toolbar_view_accounts.png");
+    public static final ImageIcon ICON_TOOLBAR_ARTICLES = new ImageIcon("images/toolbar_view_articles.png");
+    public static final ImageIcon ICON_TOOLBAR_TRANSACTIONS = new ImageIcon("images/toolbar_view_transactions.png");
+    public static final ImageIcon ICON_TOOLBAR_TRANSFERS = new ImageIcon("images/toolbar_view_transfers.png");
+    public static final ImageIcon ICON_TOOLBAR_CURRENCIES = new ImageIcon("images/toolbar_view_currencies.png");
+    public static final ImageIcon ICON_TOOLBAR_STATISTICS = new ImageIcon("images/toolbar_view_statistics.png");
+
+
+    public static final ImageIcon ICON_TOOLBAR_ADD = new ImageIcon("images/toolbar_add.png");
+    public static final ImageIcon ICON_TOOLBAR_EDIT = new ImageIcon("images/toolbar_edit.png");
+    public static final ImageIcon ICON_TOOLBAR_DELETE = new ImageIcon("images/toolbar_delete.png");
+
+
 }
