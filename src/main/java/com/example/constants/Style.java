@@ -54,5 +54,8 @@ public final class Style {
     public static final ImageIcon ICON_TOOLBAR_EDIT = new ImageIcon("images/toolbar_edit.png");
     public static final ImageIcon ICON_TOOLBAR_DELETE = new ImageIcon("images/toolbar_delete.png");
 
+    public static final ImageIcon ICON_CALENDAR = new ImageIcon("images/calendar.png");
+
+    public static final ImageIcon ICON_DIALOG_ABOUT = new ImageIcon("images/menu_help_about.png");
 
 }
