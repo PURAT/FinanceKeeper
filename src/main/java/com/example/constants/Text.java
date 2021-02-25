@@ -31,6 +31,7 @@ public final class Text {
 
     public static final String MENU_HELP_ABOUT = "О программе";
 
+    // Toolbar items
     public static final String TOOLBAR_OVERVIEW = "Обзор";
     public static final String TOOLBAR_ACCOUNTS = "Счета";
     public static final String TOOLBAR_ARTICLES = "Статьи";
@@ -45,6 +46,7 @@ public final class Text {
 
     public static final String DATE = "Дата";
 
+    // FileChooser items
     public static final String FC_SAVE = "Сохранить";
     public static final String FC_OPEN = "Открыть";
     public static final String FC_CANCEL = "Отмена";
@@ -70,6 +72,7 @@ public final class Text {
     public static final String FC_ATTR = "Атрибуты";
     public static final String FC_ALL_FILTER = "Все файлы";
 
+    // Dialogs items
     public static final String DIALOG_ABOUT_TITLE = "О программе";
     public static final String ABOUT = "<html>" +
                                                 "<body style='font-size: 120%; text-align: center; width: 300px'>" +
@@ -80,6 +83,8 @@ public final class Text {
                                                         "<br>@ Copyright " + Calendar.getInstance().get(Calendar.YEAR)  + "</p>" +
                                                 "</body>" +
                                         "</html>";
+    public static final String ADD = "Добавить";
+    public static final String EDIT = "Изменить";
 
     public static String[] getMonths() {
         return new String[] {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
