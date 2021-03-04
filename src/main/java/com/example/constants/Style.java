@@ -10,9 +10,15 @@ public final class Style {
     public static final Color COLOR_BUTTON_BG_HOVER = Color.LIGHT_GRAY;
 
     public static final Font FONT_BUTTON = new Font("Roboto-Light", Font.BOLD, 14);
+    public static final Font FONT_DIALOG_LABEL = new Font("Roboto-Light", Font.BOLD, 14);
 
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
     public static final EmptyBorder BORDER_TOOLBAR = new EmptyBorder(10, 10, 10, 10);
+    public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(5, 5, 5, 5);
+
+    public static final int PADDING_DIALOG = 10;
+
+    public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 25);
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
 
