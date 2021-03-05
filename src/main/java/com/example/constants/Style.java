@@ -18,7 +18,7 @@ public final class Style {
 
     public static final int PADDING_DIALOG = 10;
 
-    public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 25);
+    public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 24);
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
 
@@ -64,4 +64,7 @@ public final class Style {
 
     public static final ImageIcon ICON_DIALOG_ABOUT = new ImageIcon("images/menu_help_about.png");
 
+
+    public static final ImageIcon ICON_BUTTON_OK = new ImageIcon("images/button_ok.png");
+    public static final ImageIcon ICON_BUTTON_CANCEL = new ImageIcon("images/button_cancel.png");
 }

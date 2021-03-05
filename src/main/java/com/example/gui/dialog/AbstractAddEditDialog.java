@@ -1,14 +1,17 @@
 package com.example.gui.dialog;
 
+import com.example.constants.CodeAction;
 import com.example.constants.Style;
 import com.example.constants.Text;
 import com.example.exception.ModelException;
+import com.example.gui.MainButton;
 import com.example.gui.MainFrame;
 import com.example.model.Common;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -64,7 +67,7 @@ public abstract class AbstractAddEditDialog extends JDialog {
         getContentPane().removeAll();
         getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         ((JPanel) getContentPane()).setBorder(Style.BORDER_DIALOG);
-        for (Map.Entry<String, JComponent> entry: components.entrySet()) {
+        for (Map.Entry<String, JComponent> entry : components.entrySet()) {
             String key = entry.getKey();
             JLabel label = new JLabel(key);
             label.setIcon(icons.get(key));
@@ -82,6 +85,7 @@ public abstract class AbstractAddEditDialog extends JDialog {
                 if (values.containsKey(key))
                     ((UtilDateModel) ((JDatePickerImpl) component).getModel()).setValue((Date) values.get(key));
             }
+//            component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
 
             add(label);
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
@@ -89,7 +93,23 @@ public abstract class AbstractAddEditDialog extends JDialog {
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
         }
 
-        //TODO buttons
+        MainButton ok = new MainButton(Text.ADD, Style.ICON_BUTTON_OK, null, CodeAction.BUTTON_ADD);
+        if (!isAdd()) {
+            ok.setText(Text.EDIT);
+            ok.setActionCommand(CodeAction.BUTTON_EDIT);
+        }
+
+        MainButton cancel = new MainButton(Text.CANCEL, Style.ICON_BUTTON_CANCEL, null, CodeAction.BUTTON_CANCEL);
+
+        JPanel panelButtons = new JPanel();
+        panelButtons.setLayout(new BorderLayout());
+        panelButtons.add(ok, BorderLayout.EAST);
+        panelButtons.add(cancel, BorderLayout.WEST);
+
+        add(panelButtons);
+
+        pack();
+        setLocationRelativeTo(null);
     }
 
     protected abstract void init();
@@ -97,4 +117,22 @@ public abstract class AbstractAddEditDialog extends JDialog {
     protected abstract void setValues();
 
     protected abstract Common getCommonFromForm() throws ModelException;
+
+
+    static class CommonComboBox extends JComboBox<Common> {
+
+        CommonComboBox(Common[] objs) {
+            super(objs);
+            setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                    DefaultListCellRenderer renderer = (DefaultListCellRenderer) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                    Common c = (Common) value;
+                    if (c != null)
+                        renderer.setText(c.getValueForBox());
+                    return renderer;
+                }
+            });
+        }
+    }
 }
