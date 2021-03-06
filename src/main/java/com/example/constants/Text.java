@@ -46,6 +46,10 @@ public final class Text {
 
     public static final String DATE = "Дата";
 
+    public static final String ACCOUNT_TITLE = "Название:";
+    public static final String ACCOUNT_CURRENCY = "Валюта:";
+    public static final String ACCOUNT_START_AMOUNT = "Начальный баланс:";
+
     // FileChooser items
     public static final String FC_SAVE = "Сохранить";
     public static final String FC_OPEN = "Открыть";

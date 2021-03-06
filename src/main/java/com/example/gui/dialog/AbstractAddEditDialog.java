@@ -11,6 +11,7 @@ import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -21,7 +22,7 @@ public abstract class AbstractAddEditDialog extends JDialog {
     protected LinkedHashMap<String, JComponent> components = new LinkedHashMap<>();
     protected LinkedHashMap<String, ImageIcon> icons = new LinkedHashMap<>();
     protected LinkedHashMap<String, Object> values = new LinkedHashMap<>();
-    private Common c;
+    protected Common c;
 
     public AbstractAddEditDialog(MainFrame frame) {
         super(frame, Text.ADD, true);
@@ -57,10 +58,12 @@ public abstract class AbstractAddEditDialog extends JDialog {
 
     private void setDialog() {
         init();
-        if (isAdd())
+        if (isAdd()) {
             setTitle(Text.ADD);
-        else {
+            setIconImage(Style.ICON_DIALOG_ADD.getImage());
+        } else {
             setTitle(Text.EDIT);
+            setIconImage(Style.ICON_DIALOG_EDIT.getImage());
             setValues();
         }
 
@@ -85,7 +88,7 @@ public abstract class AbstractAddEditDialog extends JDialog {
                 if (values.containsKey(key))
                     ((UtilDateModel) ((JDatePickerImpl) component).getModel()).setValue((Date) values.get(key));
             }
-//            component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
+            component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
 
             add(label);
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
@@ -104,7 +107,9 @@ public abstract class AbstractAddEditDialog extends JDialog {
         JPanel panelButtons = new JPanel();
         panelButtons.setLayout(new BorderLayout());
         panelButtons.add(ok, BorderLayout.EAST);
+        panelButtons.add(Box.createRigidArea(Style.DIMENSION_DIALOG_PADDING_BUTTON));
         panelButtons.add(cancel, BorderLayout.WEST);
+        panelButtons.setAlignmentX(JPanel.LEFT_ALIGNMENT);
 
         add(panelButtons);
 
@@ -119,9 +124,9 @@ public abstract class AbstractAddEditDialog extends JDialog {
     protected abstract Common getCommonFromForm() throws ModelException;
 
 
-    static class CommonComboBox extends JComboBox<Common> {
+    static class CommonComboBox extends JComboBox<Object> {
 
-        CommonComboBox(Common[] objs) {
+        CommonComboBox(Object[] objs) {
             super(objs);
             setRenderer(new DefaultListCellRenderer() {
                 @Override

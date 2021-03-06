@@ -3,6 +3,7 @@ package com.example.gui;
 import com.example.constants.Style;
 import com.example.constants.Text;
 import com.example.gui.dialog.AboutDialog;
+import com.example.gui.dialog.AccountAddEditDialog;
 import com.example.gui.dialog.ConfirmDialog;
 import com.example.gui.dialog.ErrorDialog;
 import com.example.gui.menu.MainMenu;
@@ -24,7 +25,7 @@ public class MainFrame extends JFrame implements Refresh {
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        new AboutDialog().setVisible(true);
+        new AccountAddEditDialog(this).showDialog();
 
         menubar = new MainMenu(this);
         setJMenuBar(menubar);
