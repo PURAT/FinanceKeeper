@@ -2,12 +2,13 @@ package com.example.gui;
 
 import com.example.constants.Style;
 import com.example.constants.Text;
-import com.example.gui.dialog.AboutDialog;
-import com.example.gui.dialog.AccountAddEditDialog;
-import com.example.gui.dialog.ConfirmDialog;
-import com.example.gui.dialog.ErrorDialog;
+import com.example.exception.ModelException;
+import com.example.gui.dialog.*;
 import com.example.gui.menu.MainMenu;
 import com.example.gui.toolbar.MainToolbar;
+import com.example.model.Account;
+import com.example.model.Article;
+import com.example.model.Currency;
 import org.jdatepicker.impl.JDatePickerImpl;
 
 import javax.swing.*;
@@ -25,7 +26,7 @@ public class MainFrame extends JFrame implements Refresh {
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        new AccountAddEditDialog(this).showDialog();
+        new TransactionAddEditDialog(this).showDialog();
 
         menubar = new MainMenu(this);
         setJMenuBar(menubar);

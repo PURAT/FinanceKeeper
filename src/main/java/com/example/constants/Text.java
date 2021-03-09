@@ -44,11 +44,15 @@ public final class Text {
     public static final String TOOLBAR_EDIT = "Изменить";
     public static final String TOOLBAR_DELETE = "Удалить";
 
-    public static final String DATE = "Дата";
 
-    public static final String ACCOUNT_TITLE = "Название:";
-    public static final String ACCOUNT_CURRENCY = "Валюта:";
-    public static final String ACCOUNT_START_AMOUNT = "Начальный баланс:";
+    public static final String TITLE = "Название:";
+    public static final String ACCOUNT = "Счёт:";
+    public static final String CURRENCY = "Валюта:";
+    public static final String ARTICLE = "Статья:";
+    public static final String START_AMOUNT = "Начальный баланс:";
+    public static final String AMOUNT = "Сумма:";
+    public static final String NOTICE = "Примечание:";
+    public static final String DATE = "Дата:";
 
     // FileChooser items
     public static final String FC_SAVE = "Сохранить";

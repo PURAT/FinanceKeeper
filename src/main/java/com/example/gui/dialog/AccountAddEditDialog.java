@@ -20,31 +20,31 @@ public class AccountAddEditDialog extends AbstractAddEditDialog {
 
     @Override
     protected void init() {
-        components.put(Text.ACCOUNT_TITLE, new JTextField());
-        components.put(Text.ACCOUNT_CURRENCY, new CommonComboBox(SaveData.getInstance().getEnableCurrencies().toArray()));
-        components.put(Text.ACCOUNT_START_AMOUNT, new JTextField());
+        components.put(Text.TITLE, new JTextField());
+        components.put(Text.CURRENCY, new CommonComboBox(SaveData.getInstance().getEnableCurrencies().toArray()));
+        components.put(Text.START_AMOUNT, new JTextField());
 
-        icons.put(Text.ACCOUNT_TITLE, Style.ICON_TITLE);
-        icons.put(Text.ACCOUNT_CURRENCY, Style.ICON_CURRENCY);
-        icons.put(Text.ACCOUNT_START_AMOUNT, Style.ICON_START_AMOUNT);
+        icons.put(Text.TITLE, Style.ICON_TITLE);
+        icons.put(Text.CURRENCY, Style.ICON_CURRENCY);
+        icons.put(Text.START_AMOUNT, Style.ICON_START_AMOUNT);
 
-        values.put(Text.ACCOUNT_START_AMOUNT, Formatter.formatAmountToString(0));
+        values.put(Text.START_AMOUNT, Formatter.formatAmountToString(0));
     }
 
     @Override
     protected void setValues() {
         Account account = (Account) c;
-        values.put(Text.ACCOUNT_TITLE, account.getTitle());
-        values.put(Text.ACCOUNT_CURRENCY, account.getCurrency());
-        values.put(Text.ACCOUNT_START_AMOUNT, account.getStartAmount());
+        values.put(Text.TITLE, account.getTitle());
+        values.put(Text.CURRENCY, account.getCurrency());
+        values.put(Text.START_AMOUNT, account.getStartAmount());
     }
 
     @Override
     protected Common getCommonFromForm() throws ModelException {
         try {
-            String title = ((JTextField) components.get(Text.ACCOUNT_TITLE)).getText();
-            String startAmount = ((JTextField) components.get(Text.ACCOUNT_CURRENCY)).getText();
-            Currency currency = (Currency) ((CommonComboBox) components.get(Text.ACCOUNT_CURRENCY)).getSelectedItem();
+            String title = ((JTextField) components.get(Text.TITLE)).getText();
+            String startAmount = ((JTextField) components.get(Text.CURRENCY)).getText();
+            Currency currency = (Currency) ((CommonComboBox) components.get(Text.CURRENCY)).getSelectedItem();
             return new Account(title, currency, Formatter.formatAmountToNumber(startAmount));
         } catch (NumberFormatException e) {
             throw new ModelException(ModelException.AMOUNT_FORMAT);

@@ -11,7 +11,6 @@ import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -91,7 +90,7 @@ public abstract class AbstractAddEditDialog extends JDialog {
             component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
 
             add(label);
-            add(Box.createVerticalStrut(Style.PADDING_DIALOG));
+            add(Box.createVerticalStrut(Style.PADDING_DIALOG_LABEL));
             add(component);
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
         }

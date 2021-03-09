@@ -17,6 +17,7 @@ public final class Style {
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(5, 5, 5, 5);
 
     public static final int PADDING_DIALOG = 10;
+    public static final int PADDING_DIALOG_LABEL = 6;
 
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 24);
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);;
@@ -73,5 +74,10 @@ public final class Style {
 
     public static final ImageIcon ICON_TITLE = new ImageIcon("images/title.png");
     public static final ImageIcon ICON_CURRENCY = new ImageIcon("images/currency.png");
-    public static final ImageIcon ICON_START_AMOUNT = new ImageIcon("images/amount.png");;
+    public static final ImageIcon ICON_START_AMOUNT = new ImageIcon("images/amount.png");
+    public static final ImageIcon ICON_ACCOUNT = new ImageIcon("images/menu_view_accounts.png");
+    public static final ImageIcon ICON_ARTICLE = new ImageIcon("images/menu_view_articles.png");
+    public static final ImageIcon ICON_NOTICE = new ImageIcon("images/notice.png");
+    public static final ImageIcon ICON_AMOUNT = new ImageIcon("images/amount.png");
+    public static final ImageIcon ICON_DATE = new ImageIcon("images/date.png");
 }
