@@ -61,6 +61,6 @@ public class TransactionAddEditDialog extends AbstractAddEditDialog {
             return new Transaction(account, article, Formatter.formatAmountToNumber(amount), notice, date);
         } catch (NumberFormatException e) {
             throw new ModelException(ModelException.AMOUNT_FORMAT);
-    }
+        }
     }
 }

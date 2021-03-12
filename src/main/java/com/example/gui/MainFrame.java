@@ -26,7 +26,7 @@ public class MainFrame extends JFrame implements Refresh {
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        new TransactionAddEditDialog(this).showDialog();
+        new CurrencyAddEditDialog(this).showDialog();
 
         menubar = new MainMenu(this);
         setJMenuBar(menubar);

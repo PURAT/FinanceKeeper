@@ -46,10 +46,18 @@ public final class Text {
 
 
     public static final String TITLE = "Название:";
+    public static final String CODE = "Код валюты:";
+    public static final String BASE = "Сделать базовой:";
+    public static final String ON = "Включить:";
+    public static final String RATE = "Курс:";
     public static final String ACCOUNT = "Счёт:";
+    public static final String FROM_ACCOUNT = "Откуда:";
+    public static final String TO_ACCOUNT = "Куда:";
     public static final String CURRENCY = "Валюта:";
     public static final String ARTICLE = "Статья:";
     public static final String START_AMOUNT = "Начальный баланс:";
+    public static final String FROM_AMOUNT = "Снято:";
+    public static final String TO_AMOUNT = "Зачислено:";
     public static final String AMOUNT = "Сумма:";
     public static final String NOTICE = "Примечание:";
     public static final String DATE = "Дата:";
