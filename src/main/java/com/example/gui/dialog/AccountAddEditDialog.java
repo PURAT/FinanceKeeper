@@ -27,6 +27,7 @@ public class AccountAddEditDialog extends AbstractAddEditDialog {
         icons.put(Text.TITLE, Style.ICON_TITLE);
         icons.put(Text.CURRENCY, Style.ICON_CURRENCY);
         icons.put(Text.START_AMOUNT, Style.ICON_START_AMOUNT);
+        
 
         values.put(Text.START_AMOUNT, Formatter.formatAmountToString(0));
     }
