@@ -29,6 +29,9 @@ public class SaveData {
     public void load() {
         SaveLoad.load(this);
         sort();
+
+        for (Account account: accounts)
+            account.setAmountFromTransactionsAndTransfers(transactions, transfers);
     }
 
     public void save() {
@@ -41,15 +44,12 @@ public class SaveData {
         this.accounts.sort((a1, a2) -> a1.getTitle().compareToIgnoreCase(a2.getTitle()));
         this.transactions.sort(Comparator.comparing(Transaction::getDate));
         this.transfers.sort(Comparator.comparing(Transfer::getDate));
-        this.currencies.sort(new Comparator<Currency>() {
-            @Override
-            public int compare(Currency c1, Currency c2) {
-                if (c1.isBase()) return -1;
-                if (c2.isBase()) return 1;
-                if (c1.isOn()) return -1;
-                if (c2.isOn()) return 1;
-                return c1.getTitle().compareToIgnoreCase(c2.getTitle());
-            }
+        this.currencies.sort((c1, c2) -> {
+            if (c1.isBase()) return -1;
+            if (c2.isBase()) return 1;
+            if (c1.isOn()) return -1;
+            if (c2.isOn()) return 1;
+            return c1.getTitle().compareToIgnoreCase(c2.getTitle());
         });
     }
 

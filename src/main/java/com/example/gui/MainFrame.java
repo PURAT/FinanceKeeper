@@ -5,6 +5,7 @@ import com.example.constants.Text;
 import com.example.exception.ModelException;
 import com.example.gui.dialog.*;
 import com.example.gui.menu.MainMenu;
+import com.example.gui.panel.LeftPanel;
 import com.example.gui.toolbar.MainToolbar;
 import com.example.model.Account;
 import com.example.model.Article;
@@ -19,14 +20,13 @@ public class MainFrame extends JFrame implements Refresh {
     private GridBagConstraints constraints;
     private final MainMenu menubar;
     private final MainToolbar toolbar;
+    private final LeftPanel leftPanel;
 
     public MainFrame() {
         super(Text.PROGRAM_NAME);
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        new CurrencyAddEditDialog(this).showDialog();
 
         menubar = new MainMenu(this);
         setJMenuBar(menubar);
@@ -47,6 +47,9 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.anchor = GridBagConstraints.NORTH;
+
+        leftPanel = new LeftPanel(this);
+        add(leftPanel, constraints);
 
         pack();
         setLocationRelativeTo(null);

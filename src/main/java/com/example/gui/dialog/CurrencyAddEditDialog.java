@@ -12,7 +12,6 @@ import com.example.settings.Settings;
 import com.example.util.Formatter;
 
 import javax.swing.*;
-import java.util.Objects;
 
 public class CurrencyAddEditDialog extends AbstractAddEditDialog {
 

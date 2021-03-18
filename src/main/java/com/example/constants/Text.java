@@ -62,6 +62,11 @@ public final class Text {
     public static final String NOTICE = "Примечание:";
     public static final String DATE = "Дата:";
 
+    // Panel items
+    public static final String BALANCE_CURRENCIES = "Баланс по валютам:";
+    public static final String FULL_BALANCE = "Итоговый баланс:";
+
+
     // FileChooser items
     public static final String FC_SAVE = "Сохранить";
     public static final String FC_OPEN = "Открыть";
