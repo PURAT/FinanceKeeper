@@ -61,4 +61,8 @@ public class MainFrame extends JFrame implements Refresh {
         menubar.refresh();
         pack();
     }
+
+    public MainMenu getMenu() {
+        return menubar;
+    }
 }

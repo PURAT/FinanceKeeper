@@ -21,12 +21,14 @@ public final class Style {
     public static final EmptyBorder BORDER_BALANCE_PANEL = new EmptyBorder(10, 10, 10, 10);
 
     public static final int PADDING_DIALOG = 10;
+    public static final int PADDING_EMPTY_PANEL = 15;
     public static final int PADDING_DIALOG_LABEL = 6;
     public static final int PADDING_BALANCE_PANEL = 5;
     public static final int PADDING_LEFT_PANEL = 15;
+    public static final int PADDING_PANEL = 10;
 
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 24);
-    public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);;
+    public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);
     public static final Dimension DIMENSION_BALANCE_PANEL = new Dimension(60, 0);
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
