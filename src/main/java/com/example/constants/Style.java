@@ -14,6 +14,8 @@ public final class Style {
     public static final Font FONT_DIALOG_LABEL = new Font("Roboto-Light", Font.BOLD, 14);
     public static final Font FONT_HEADER = new Font("Roboto-Light", Font.BOLD, 16);
     public static final Font FONT_AMOUNT = new Font("Roboto-Light", Font.PLAIN, 12);
+    public static final Font FONT_TABLE_HEADER = new Font("Roboto-Light", Font.BOLD, 16);
+    public static final Font FONT_TABLE = new Font("Roboto-Light", Font.PLAIN, 14);
 
     public static final EmptyBorder BORDER_LEFT_PANEL = new EmptyBorder(0, 20, 10, 20);
     public static final EmptyBorder BORDER_TOOLBAR = new EmptyBorder(10, 10, 10, 10);
@@ -26,10 +28,12 @@ public final class Style {
     public static final int PADDING_BALANCE_PANEL = 5;
     public static final int PADDING_LEFT_PANEL = 15;
     public static final int PADDING_PANEL = 10;
+    public static final int TABLE_ROW_HEIGHT = 18;
 
     public static final Dimension DIMENSION_DIALOG_TEXTFIELD_SIZE = new Dimension(200, 24);
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);
     public static final Dimension DIMENSION_BALANCE_PANEL = new Dimension(60, 0);
+    public static final Dimension DIMENSION_TABLE_SIZE = new Dimension(845, 450);
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
 
