@@ -11,7 +11,6 @@ public abstract class AbstractPanel extends JPanel implements Refresh {
 
     public AbstractPanel(MainFrame frame) {
         this.frame = frame;
-        init();
     }
 
     protected abstract void init();

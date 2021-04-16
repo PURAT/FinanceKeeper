@@ -6,11 +6,9 @@ import com.example.exception.ModelException;
 import com.example.gui.dialog.*;
 import com.example.gui.menu.MainMenu;
 import com.example.gui.panel.LeftPanel;
+import com.example.gui.panel.OverviewPanel;
+import com.example.gui.panel.RightPanel;
 import com.example.gui.toolbar.MainToolbar;
-import com.example.model.Account;
-import com.example.model.Article;
-import com.example.model.Currency;
-import org.jdatepicker.impl.JDatePickerImpl;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +18,8 @@ public class MainFrame extends JFrame implements Refresh {
     private GridBagConstraints constraints;
     private final MainMenu menubar;
     private final MainToolbar toolbar;
-    private final LeftPanel leftPanel;
+    private RightPanel rightPanel;
+    private LeftPanel leftPanel;
 
     public MainFrame() {
         super(Text.PROGRAM_NAME);
@@ -51,8 +50,23 @@ public class MainFrame extends JFrame implements Refresh {
         leftPanel = new LeftPanel(this);
         add(leftPanel, constraints);
 
+        // right panel
+        setRightPanel(new OverviewPanel(this));
+
         pack();
         setLocationRelativeTo(null);
+    }
+
+    private void setRightPanel(RightPanel panel) {
+        if (rightPanel != null)
+            remove(rightPanel);
+        constraints.gridy = 1;
+        constraints.gridx = 1;
+        constraints.gridwidth = 1;
+        rightPanel = panel;
+        rightPanel.setBorder(Style.BORDER_PANEL);
+        add(rightPanel, constraints);
+        pack();
     }
 
     @Override

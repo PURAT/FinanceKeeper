@@ -17,8 +17,9 @@ import static com.example.settings.Settings.PATH_ROBOTO_LIGHT;
 
 public class FinanceKeeper {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ModelException {
         init();
+        testModels();
 
         MainFrame frame = new MainFrame();
         frame.setVisible(true);

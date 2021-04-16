@@ -15,6 +15,7 @@ public class LeftPanel extends AbstractPanel {
 
     public LeftPanel(MainFrame frame) {
         super(frame);
+        init();
     }
 
     @Override
@@ -25,16 +26,15 @@ public class LeftPanel extends AbstractPanel {
         JLabel header = new JLabel(Text.BALANCE_CURRENCIES);
         header.setFont(Style.FONT_HEADER);
         header.setIcon(Style.ICON_LEFT_PANEL_BALANCE_CURRENCIES);
+        header.setHorizontalAlignment(SwingConstants.RIGHT);
         header.setAlignmentX(JComponent.RIGHT_ALIGNMENT);
 
-        JLabel header2 = new JLabel(Text.FULL_BALANCE);
+        // fixme: padding of header2
+        JLabel header2 = new JLabel(Text.FULL_BALANCE + "    ");
         header2.setFont(Style.FONT_HEADER);
         header2.setIcon(Style.ICON_LEFT_PANEL_FULL_BALANCE);
+        header2.setHorizontalAlignment(SwingConstants.RIGHT);
         header2.setAlignmentX(JComponent.RIGHT_ALIGNMENT);
-
-        // fixme
-//        header2.setHorizontalTextPosition(SwingConstants.LEFT);
-//        header2.setHorizontalAlignment(SwingConstants.LEFT);
 
         add(header);
 

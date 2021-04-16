@@ -16,37 +16,37 @@ public class RightPanel extends AbstractPanel {
     private ImageIcon icon;
     private JPanel[] panels;
 
-    public RightPanel(MainFrame frame, String title, ImageIcon icon, TableData tableData, JPanel[] panels) {
+    public RightPanel(MainFrame frame, TableData tableData, String title, ImageIcon icon, JPanel[] panels) {
         super(frame);
         this.title = title;
         this.icon = icon;
         this.tableData = tableData;
         this.panels = panels;
+        init();
     }
 
     public RightPanel(MainFrame frame, TableData tableData, String title, ImageIcon icon) {
-        this(frame, title, icon, tableData, new JPanel[] { });
+        this(frame, tableData, title, icon, new JPanel[] { });
     }
 
     public RightPanel(MainFrame frame, TableData tableData, String title, ImageIcon icon, AbstractToolbar toolbar) {
-        this(frame, title, icon, tableData, new JPanel[] {toolbar});
+        this(frame, tableData, title, icon, new JPanel[] {toolbar});
     }
 
     private void enableEditDelete() {
+        for (JPanel panel : panels) {
+            if (panel instanceof EnableEditDelete)
+                ((EnableEditDelete) panel).setEnableEditDelete(false);
+        }
+        frame.getMenu().setEnableEditDelete(false);
+
         if (tableData != null && tableData.getSelectedRow() != -1) {
             for (JPanel panel : panels) {
                 if (panel instanceof EnableEditDelete)
                     ((EnableEditDelete) panel).setEnableEditDelete(true);
             }
             frame.getMenu().setEnableEditDelete(true);
-            return;
         }
-
-        for (JPanel panel : panels) {
-            if (panel instanceof EnableEditDelete)
-                ((EnableEditDelete) panel).setEnableEditDelete(true);
-        }
-        frame.getMenu().setEnableEditDelete(true);
     }
 
     @Override

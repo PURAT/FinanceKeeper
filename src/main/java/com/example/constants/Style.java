@@ -9,6 +9,8 @@ public final class Style {
     public static final Color COLOR_BUTTON_BG_NORMAL = new Color(240, 240, 240);
     public static final Color COLOR_BALANCE_PANEL = new Color(223, 228, 234);
     public static final Color COLOR_BUTTON_BG_HOVER = Color.LIGHT_GRAY;
+    public static final Color COLOR_AMOUNT_EXPENSE = new Color(196, 88, 88);
+    public static final Color COLOR_AMOUNT_INCOME = new Color(86, 177, 86);
 
     public static final Font FONT_BUTTON = new Font("Roboto-Light", Font.BOLD, 14);
     public static final Font FONT_DIALOG_LABEL = new Font("Roboto-Light", Font.BOLD, 14);
@@ -17,16 +19,17 @@ public final class Style {
     public static final Font FONT_TABLE_HEADER = new Font("Roboto-Light", Font.BOLD, 16);
     public static final Font FONT_TABLE = new Font("Roboto-Light", Font.PLAIN, 14);
 
-    public static final EmptyBorder BORDER_LEFT_PANEL = new EmptyBorder(0, 20, 10, 20);
+    public static final EmptyBorder BORDER_LEFT_PANEL = new EmptyBorder(6, 20, 10, 20);
     public static final EmptyBorder BORDER_TOOLBAR = new EmptyBorder(10, 10, 10, 10);
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(5, 5, 5, 5);
     public static final EmptyBorder BORDER_BALANCE_PANEL = new EmptyBorder(10, 10, 10, 10);
+    public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
 
     public static final int PADDING_DIALOG = 10;
     public static final int PADDING_EMPTY_PANEL = 15;
     public static final int PADDING_DIALOG_LABEL = 6;
     public static final int PADDING_BALANCE_PANEL = 5;
-    public static final int PADDING_LEFT_PANEL = 15;
+    public static final int PADDING_LEFT_PANEL = 30;
     public static final int PADDING_PANEL = 10;
     public static final int TABLE_ROW_HEIGHT = 18;
 
@@ -100,4 +103,7 @@ public final class Style {
 
     public static final ImageIcon ICON_LEFT_PANEL_BALANCE_CURRENCIES = new ImageIcon("images/full_balance.png");
     public static final ImageIcon ICON_LEFT_PANEL_FULL_BALANCE = new ImageIcon("images/balance_currencies.png");
+
+    public static final ImageIcon ICON_PANEL_TRANSACTIONS = new ImageIcon("images/panel_transactions");
+    public static final ImageIcon ICON_PANEL_OVERVIEW = new ImageIcon("images/menu_view_overview.png");
 }

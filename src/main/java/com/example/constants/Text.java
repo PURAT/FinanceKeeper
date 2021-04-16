@@ -93,6 +93,9 @@ public final class Text {
     public static final String FC_ATTR = "Атрибуты";
     public static final String FC_ALL_FILTER = "Все файлы";
 
+    // Panel items
+    public static final String PANEL_TRANSACTIONS = "Транзакции";
+
     // Dialogs items
     public static final String DIALOG_ABOUT_TITLE = "О программе";
     public static final String ABOUT = "<html>" +
