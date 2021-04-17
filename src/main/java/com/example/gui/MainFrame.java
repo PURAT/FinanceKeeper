@@ -5,6 +5,7 @@ import com.example.constants.Text;
 import com.example.exception.ModelException;
 import com.example.gui.dialog.*;
 import com.example.gui.menu.MainMenu;
+import com.example.gui.panel.AccountPanel;
 import com.example.gui.panel.LeftPanel;
 import com.example.gui.panel.OverviewPanel;
 import com.example.gui.panel.RightPanel;

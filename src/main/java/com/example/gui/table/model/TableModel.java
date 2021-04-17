@@ -5,15 +5,17 @@ import com.example.model.Common;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class TableModel extends AbstractTableModel implements Refresh {
 
     protected List<? extends Common> data;
-    protected List<String> columns = new ArrayList<>();
+    protected List<String> columns;
 
-    public TableModel(List<? extends Common> data) {
+    public TableModel(List<? extends Common> data, String[] columns) {
         this.data = data;
+        this.columns = new ArrayList<>(Arrays.asList(columns));
     }
 
     @Override

@@ -59,12 +59,14 @@ public class RightPanel extends AbstractPanel {
         label.setAlignmentX(CENTER_ALIGNMENT);
         add(label);
 
-        for (JPanel panel: panels) {
-            add(Box.createVerticalStrut(Style.PADDING_PANEL));
-            add(panel);
+        if (panels.length == 0) {
+            add(Box.createVerticalStrut(Style.PADDING_EMPTY_PANEL));
         }
 
-        add(Box.createVerticalStrut(Style.PADDING_EMPTY_PANEL));
+        for (JPanel panel: panels) {
+            add(panel);
+            add(Box.createVerticalStrut(Style.PADDING_PANEL));
+        }
 
         JScrollPane scrollPane = new JScrollPane(tableData);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);

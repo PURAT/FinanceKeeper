@@ -4,9 +4,6 @@ import com.example.model.Transaction;
 import com.example.saveload.SaveData;
 import com.example.util.Formatter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class TransactionTableModel extends TableModel {
 
     private static final int ARTICLE = 0;
@@ -19,13 +16,11 @@ public class TransactionTableModel extends TableModel {
     private int count = -1;
 
     public TransactionTableModel(String[] columns) {
-        super(SaveData.getInstance().getLastTransactions());
-        this.columns = new ArrayList<>(Arrays.asList(columns));
+        super(SaveData.getInstance().getLastTransactions(), columns);
     }
 
     public TransactionTableModel(String[] columns, int count) {
-        super(SaveData.getInstance().getTransactionsByCount(count));
-        this.columns = new ArrayList<>(Arrays.asList(columns));
+        super(SaveData.getInstance().getTransactionsByCount(count), columns);
         this.count = count;
     }
 
