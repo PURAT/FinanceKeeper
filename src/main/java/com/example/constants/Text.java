@@ -96,6 +96,7 @@ public final class Text {
     // Panel items
     public static final String PANEL_TRANSACTIONS = "Транзакции";
     public static final String PANEL_ACCOUNTS = "Счета";
+    public static final String PANEL_ARTICLES = "Статьи";
 
     // Dialogs items
     public static final String DIALOG_ABOUT_TITLE = "О программе";

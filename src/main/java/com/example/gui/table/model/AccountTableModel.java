@@ -6,7 +6,7 @@ import com.example.util.Formatter;
 
 public class AccountTableModel extends TableModel {
 
-    private static final int TITLE= 0;
+    private static final int TITLE = 0;
     private static final int AMOUNT = 1;
 
     public AccountTableModel(String[] columns) {
@@ -15,7 +15,7 @@ public class AccountTableModel extends TableModel {
 
     @Override
     protected void updateData() {
-            data = SaveData.getInstance().getAccounts();
+        data = SaveData.getInstance().getAccounts();
     }
 
     @Override
