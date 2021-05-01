@@ -2,24 +2,21 @@ package com.example.gui.table;
 
 import com.example.constants.Style;
 import com.example.constants.Text;
-import com.example.gui.table.model.TransactionTableModel;
+import com.example.gui.table.model.CurrencyTableModel;
+import com.example.gui.table.model.TransferTableModel;
 import com.example.gui.table.renderer.TableCellRenderer;
+import com.example.model.Currency;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class TransactionTableData extends TableData {
+public class TransferTableData extends TableData {
 
-    private static final String[] columns = new String[] {Text.ARTICLE, Text.ACCOUNT, Text.AMOUNT, Text.NOTICE, Text.DATE};
-    private static final ImageIcon[] icons = new ImageIcon[] {Style.ICON_ARTICLE, Style.ICON_ACCOUNT, Style.ICON_AMOUNT, Style.ICON_NOTICE, Style.ICON_DATE};
+    private static final String[] columns = new String[] {Text.FROM_ACCOUNT, Text.TO_ACCOUNT, Text.FROM_AMOUNT, Text.TO_AMOUNT, Text.NOTICE, Text.DATE};
+    private static final ImageIcon[] icons = new ImageIcon[] {Style.ICON_ACCOUNT, Style.ICON_ACCOUNT, Style.ICON_AMOUNT, Style.ICON_AMOUNT, Style.ICON_NOTICE, Style.ICON_DATE};
 
-    public TransactionTableData() {
-        super(new TransactionTableModel(columns), columns, icons);
-        init();
-    }
-
-    public TransactionTableData(int count) {
-        super(new TransactionTableModel(columns, count), columns, icons);
+    public TransferTableData() {
+        super(new TransferTableModel(columns), columns, icons);
         init();
     }
 

@@ -70,6 +70,8 @@ public class RightPanel extends AbstractPanel {
 
         JScrollPane scrollPane = new JScrollPane(tableData);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        // fixme:  scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
         add(scrollPane);
 
         ListSelectionModel selectionModel = tableData.getSelectionModel();

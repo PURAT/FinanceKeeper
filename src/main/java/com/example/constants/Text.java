@@ -47,8 +47,8 @@ public final class Text {
 
     public static final String TITLE = "Название:";
     public static final String CODE = "Код валюты:";
-    public static final String BASE = "Сделать базовой:";
-    public static final String ON = "Включить:";
+    public static final String BASE = "Базовая:";
+    public static final String ON = "Включена:";
     public static final String RATE = "Курс:";
     public static final String ACCOUNT = "Счёт:";
     public static final String FROM_ACCOUNT = "Откуда:";
@@ -95,8 +95,11 @@ public final class Text {
 
     // Panel items
     public static final String PANEL_TRANSACTIONS = "Транзакции";
+    public static final String PANEL_LAST_TRANSACTIONS = "Последние транзакции";
     public static final String PANEL_ACCOUNTS = "Счета";
     public static final String PANEL_ARTICLES = "Статьи";
+    public static final String PANEL_TRANSFERS = "Переводы";
+    public static final String PANEL_CURRENCIES = "Валюты";
 
     // Dialogs items
     public static final String DIALOG_ABOUT_TITLE = "О программе";

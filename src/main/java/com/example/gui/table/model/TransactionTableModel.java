@@ -43,7 +43,7 @@ public class TransactionTableModel extends TableModel {
             case ACCOUNT:
                 return transaction.getAccount().getTitle();
             case AMOUNT:
-                return transaction.getAmount();
+                return Formatter.formatAmountWithCurrencyToString(transaction.getAmount(), transaction.getAccount().getCurrency());
             case NOTICE:
                 return transaction.getNotice();
             case DATE:

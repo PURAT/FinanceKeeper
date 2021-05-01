@@ -9,6 +9,6 @@ import com.example.settings.Settings;
 public class OverviewPanel extends RightPanel {
 
     public OverviewPanel(MainFrame frame) {
-        super(frame, new TransactionTableData(Settings.COUNT_OVERVIEW_ROWS), Text.PANEL_TRANSACTIONS, Style.ICON_PANEL_OVERVIEW);
+        super(frame, new TransactionTableData(Settings.COUNT_OVERVIEW_ROWS), Text.PANEL_LAST_TRANSACTIONS, Style.ICON_PANEL_OVERVIEW);
     }
 }

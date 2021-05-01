@@ -49,7 +49,7 @@ public class MainFrame extends JFrame implements Refresh {
         add(leftPanel, constraints);
 
         // right panel
-        setRightPanel(new ArticlePanel(this));
+        setRightPanel(new CurrencyPanel(this));
 
         pack();
         setLocationRelativeTo(null);
@@ -71,6 +71,8 @@ public class MainFrame extends JFrame implements Refresh {
     public void refresh() {
         SwingUtilities.updateComponentTreeUI(this);
         menubar.refresh();
+        leftPanel.refresh();
+        rightPanel.refresh();
         pack();
     }
 

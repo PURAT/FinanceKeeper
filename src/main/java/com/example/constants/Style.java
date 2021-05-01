@@ -11,6 +11,8 @@ public final class Style {
     public static final Color COLOR_BUTTON_BG_HOVER = Color.LIGHT_GRAY;
     public static final Color COLOR_AMOUNT_EXPENSE = new Color(196, 88, 88);
     public static final Color COLOR_AMOUNT_INCOME = new Color(86, 177, 86);
+    public static final Color COLOR_ON = Color.BLACK;
+    public static final Color COLOR_OFF = new Color(170, 170, 170);
 
     public static final Font FONT_BUTTON = new Font("Roboto-Light", Font.BOLD, 14);
     public static final Font FONT_DIALOG_LABEL = new Font("Roboto-Light", Font.BOLD, 14);
@@ -105,6 +107,9 @@ public final class Style {
     public static final ImageIcon ICON_LEFT_PANEL_FULL_BALANCE = new ImageIcon("images/balance_currencies.png");
 
     public static final ImageIcon ICON_PANEL_OVERVIEW = new ImageIcon("images/menu_view_overview.png");
+    public static final ImageIcon ICON_PANEL_TRANSACTION = new ImageIcon("images/menu_view_overview.png");
     public static final ImageIcon ICON_PANEL_ACCOUNTS = new ImageIcon("images/menu_view_accounts.png");
     public static final ImageIcon ICON_PANEL_ARTICLES = new ImageIcon("images/menu_view_articles.png");
+    public static final ImageIcon PANEL_TRANSFERS = new ImageIcon("images/menu_view_transfers.png");
+    public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/menu_view_currencies.png");
 }

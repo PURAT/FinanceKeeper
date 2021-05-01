@@ -16,10 +16,12 @@ public class DateFilter {
 
     public DateFilter() {
         this.step = STEP_MONTH;
+        setRange(new GregorianCalendar());
     }
 
     public DateFilter(int step) {
         this.step = step;
+        setRange(new GregorianCalendar());
     }
 
     public int getStep() {

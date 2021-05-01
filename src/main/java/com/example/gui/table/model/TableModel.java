@@ -2,6 +2,7 @@ package com.example.gui.table.model;
 
 import com.example.gui.Refresh;
 import com.example.model.Common;
+import com.example.model.Currency;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -50,5 +51,9 @@ public abstract class TableModel extends AbstractTableModel implements Refresh {
             return Object.class;
 
         return object.getClass();
+    }
+
+    public Object getObjectByRow(int row) {
+        return data.get(row);
     }
 }
