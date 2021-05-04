@@ -2,19 +2,23 @@ package com.example.gui.table;
 
 import com.example.constants.Style;
 import com.example.gui.Refresh;
+import com.example.gui.menu.TablePopupMenu;
 import com.example.gui.table.model.TableModel;
 import com.example.gui.table.renderer.TableCellRenderer;
 import com.example.gui.table.renderer.TableHeaderIconRenderer;
 
 import javax.swing.*;
+import java.awt.*;
 
 public abstract class TableData extends JTable implements Refresh {
 
+    private final TablePopupMenu popupMenu;
     private final String[] columns;
     private final ImageIcon[] icons;
 
     public TableData(TableModel model, String[] columns, ImageIcon[] icons) {
         super(model);
+        this.popupMenu = new TablePopupMenu();
         this.columns = columns;
         this.icons = icons;
 
@@ -31,6 +35,17 @@ public abstract class TableData extends JTable implements Refresh {
 
         TableCellRenderer cellRenderer = new TableCellRenderer();
         setDefaultRenderer(String.class, cellRenderer);
+        setComponentPopupMenu(popupMenu);
+    }
+
+    @Override
+    public JPopupMenu getComponentPopupMenu() {
+        Point point = getMousePosition();
+        int row = rowAtPoint(point);
+        if (row != -1) {
+            setRowSelectionInterval(row, row);
+        }
+        return super.getComponentPopupMenu();
     }
 
     @Override

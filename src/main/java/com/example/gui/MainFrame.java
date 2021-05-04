@@ -49,7 +49,7 @@ public class MainFrame extends JFrame implements Refresh {
         add(leftPanel, constraints);
 
         // right panel
-        setRightPanel(new CurrencyPanel(this));
+        setRightPanel(new TransactionPanel(this));
 
         pack();
         setLocationRelativeTo(null);

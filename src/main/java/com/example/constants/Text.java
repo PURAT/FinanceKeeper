@@ -115,6 +115,7 @@ public final class Text {
     public static final String ADD = "Добавить";
     public static final String EDIT = "Изменить";
     public static final String CANCEL = "Отменить";
+    public static final String DELETE = "Удалить";
 
     public static String[] getMonths() {
         return new String[] {JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
