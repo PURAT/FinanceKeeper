@@ -6,6 +6,9 @@ import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 
+import java.io.File;
+import java.util.Set;
+
 
 public class SaveLoad {
 
@@ -42,6 +45,7 @@ public class SaveLoad {
 
         } catch (Exception e) {
             System.out.println("Файла для загрузки данных не существует!");
+            Settings.SAVE_DIR.mkdir();
         }
     }
 }

@@ -33,7 +33,7 @@ public class BalanceStatistics {
         return getDataForChart(true);
     }
 
-    public static HashMap<String, Double> getDataFroChartExpense() {
+    public static HashMap<String, Double> getDataForChartExpense() {
         return getDataForChart(false);
     }
 

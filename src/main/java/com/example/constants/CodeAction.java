@@ -22,6 +22,7 @@ public class CodeAction {
     public static final String TOOLBAR_OVERVIEW = "TOOLBAR_OVERVIEW";
     public static final String TOOLBAR_ACCOUNTS = "TOOLBAR_ACCOUNTS";
     public static final String TOOLBAR_ARTICLES = "TOOLBAR_ARTICLES";
+    public static final String TOOLBAR_TRANSACTIONS = "TOOLBAR_TRANSACTIONS";
     public static final String TOOLBAR_TRANSFERS = "TOOLBAR_TRANSFERS";
     public static final String TOOLBAR_CURRENCIES = "TOOLBAR_CURRENCIES";
     public static final String TOOLBAR_STATISTICS = "TOOLBAR_STATISTICS";

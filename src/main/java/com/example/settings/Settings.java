@@ -19,6 +19,7 @@ public final class Settings {
     public static final File PATH_ROBOTO_LIGHT = new File("fonts/roboto/Roboto-Light.ttf");
 
     public static final String[] CURRENCIES_CODES = new String[] {"RUB", "USD", "EUR", "BYN", "UAH"};
+    public static final int COUNT_OVERVIEW_ROWS = 10;
 
     public static void init() {
         try {
