@@ -2,10 +2,10 @@ package com.example.gui;
 
 import com.example.constants.Style;
 import com.example.constants.Text;
-import com.example.exception.ModelException;
-import com.example.gui.dialog.*;
 import com.example.gui.menu.MainMenu;
-import com.example.gui.panel.*;
+import com.example.gui.panel.LeftPanel;
+import com.example.gui.panel.RightPanel;
+import com.example.gui.panel.TransactionPanel;
 import com.example.gui.toolbar.MainToolbar;
 
 import javax.swing.*;
@@ -54,12 +54,6 @@ public class MainFrame extends JFrame implements Refresh {
         pack();
         setLocationRelativeTo(null);
 
-        pack();
-    }
-
-    @Override
-    public void refresh() {
-        SwingUtilities.updateComponentTreeUI(this);
         pack();
     }
 
