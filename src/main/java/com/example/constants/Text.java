@@ -151,6 +151,11 @@ public final class Text {
     public static final String ERROR_RATE_INCORRECT = "Неккоректное значение курса!";
     public static final String ERROR_AMOUNT_FORMAT = "Неккоректный формат суммы!";
     public static final String ERROR_NO_BASE_CURRENCY = "Необходимо выбрать базовую валюту!";
+    public static final String ERROR_UPDATE_CURRENCIES = "Не удалось обновить курсы валют!";
+
+    public static final String CONFIRM_EXIT_TEXT = "Вы действительно хотите выйти? Все несохраненные данные будут потеряны.";
+    public static final String CONFIRM_EXIT_TITLE = "Подтверждение выхода";
+
 
     // Answers
     public static final String YES = "Да";

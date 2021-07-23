@@ -17,14 +17,14 @@ import java.util.Map;
 
 public class RateCurrency {
 
-    static HashMap<String, Double> loadRates(Currency base) {
+    static HashMap<String, Double> loadRates(Currency base) throws Exception {
         HashMap<String, NodeList> map = new HashMap<>();
         HashMap<String, Double> rates = new HashMap<>();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String URL = "http://www.cbr.ru/scripts/XML_daily.asp?date_req=" + dateFormat.format(new Date());
 
-        try {
+//        try {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document document = documentBuilder.parse(URL);
 
@@ -64,11 +64,11 @@ public class RateCurrency {
                 entry.setValue((double) Math.round(entry.getValue() / baseRate * 10000) / 10000);
             }
 
-        } catch (ParserConfigurationException | SAXException e) {
-            System.out.println("Произошла ошибка при попытке спарсить XML файл.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        } catch (ParserConfigurationException | SAXException e) {
+//            System.out.println("Произошла ошибка при попытке спарсить XML файл.");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         return rates;
     }
 }

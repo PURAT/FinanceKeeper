@@ -6,6 +6,8 @@ import com.example.constants.Text;
 import com.example.gui.EnableEditDelete;
 import com.example.gui.MainFrame;
 import com.example.gui.Refresh;
+import com.example.handler.Handler;
+import com.example.handler.MenuFileHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,32 +41,38 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete {
         this.add(view);
         this.add(help);
 
-        addMenuItem(file, Text.MENU_FILE_NEW, Style.ICON_MENU_FILE_NEW, CodeAction.MENU_FILE_NEW, KeyEvent.VK_N);
-        addMenuItem(file, Text.MENU_FILE_OPEN, Style.ICON_MENU_FILE_OPEN, CodeAction.MENU_FILE_OPEN, KeyEvent.VK_O);
-        addMenuItem(file, Text.MENU_FILE_SAVE, Style.ICON_MENU_FILE_SAVE, CodeAction.MENU_FILE_SAVE, KeyEvent.VK_S);
-        addMenuItem(file, Text.MENU_FILE_UPDATE_CURRENCIES, Style.ICON_MENU_FILE_UPDATE_CURRENCIES, CodeAction.MENU_FILE_UPDATE_CURRENCIES);
-        addMenuItem(file, Text.MENU_FILE_EXIT, Style.ICON_MENU_FILE_EXIT, CodeAction.MENU_FILE_EXIT);
+        MenuFileHandler fileHandler = new MenuFileHandler(frame);
+        MenuFileHandler editHandler = new MenuFileHandler(frame);
+        MenuFileHandler viewHandler = new MenuFileHandler(frame);
+        MenuFileHandler helpHandler = new MenuFileHandler(frame);
 
-        addMenuItem(edit, Text.MENU_EDIT_ADD, Style.ICON_MENU_EDIT_ADD, CodeAction.MENU_EDIT_ADD);
-        menuEdit = addMenuItem(edit, Text.MENU_EDIT_EDIT, Style.ICON_MENU_EDIT_EDIT, CodeAction.MENU_EDIT_EDIT);
-        menuDelete = addMenuItem(edit, Text.MENU_EDIT_DELETE, Style.ICON_MENU_EDIT_DELETE, CodeAction.MENU_EDIT_DELETE);
+        addMenuItem(file, fileHandler, Text.MENU_FILE_NEW, Style.ICON_MENU_FILE_NEW, CodeAction.MENU_FILE_NEW, KeyEvent.VK_N);
+        addMenuItem(file, fileHandler,Text.MENU_FILE_OPEN, Style.ICON_MENU_FILE_OPEN, CodeAction.MENU_FILE_OPEN, KeyEvent.VK_O);
+        addMenuItem(file, fileHandler,Text.MENU_FILE_SAVE, Style.ICON_MENU_FILE_SAVE, CodeAction.MENU_FILE_SAVE, KeyEvent.VK_S);
+        addMenuItem(file, fileHandler,Text.MENU_FILE_UPDATE_CURRENCIES, Style.ICON_MENU_FILE_UPDATE_CURRENCIES, CodeAction.MENU_FILE_UPDATE_CURRENCIES);
+        addMenuItem(file, fileHandler,Text.MENU_FILE_EXIT, Style.ICON_MENU_FILE_EXIT, CodeAction.MENU_FILE_EXIT);
 
-        addMenuItem(view, Text.MENU_VIEW_OVERVIEW, Style.ICON_MENU_VIEW_OVERVIEW, CodeAction.MENU_VIEW_OVERVIEW);
-        addMenuItem(view, Text.MENU_VIEW_ARTICLES, Style.ICON_MENU_VIEW_ARTICLES, CodeAction.MENU_VIEW_ARTICLES);
-        addMenuItem(view, Text.MENU_VIEW_ACCOUNTS, Style.ICON_MENU_VIEW_ACCOUNTS, CodeAction.MENU_VIEW_ACCOUNTS);
-        addMenuItem(view, Text.MENU_VIEW_CURRENCIES, Style.ICON_MENU_VIEW_CURRENCIES, CodeAction.MENU_VIEW_CURRENCIES);
-        addMenuItem(view, Text.MENU_VIEW_STATISTICS, Style.ICON_MENU_VIEW_STATISTICS, CodeAction.MENU_VIEW_STATISTICS);
-        addMenuItem(view, Text.MENU_VIEW_TRANSFERS, Style.ICON_MENU_VIEW_TRANSFERS, CodeAction.MENU_VIEW_TRANSFERS);
-        addMenuItem(view, Text.MENU_VIEW_TRANSACTIONS, Style.ICON_MENU_VIEW_TRANSACTIONS, CodeAction.MENU_VIEW_TRANSACTIONS);
+        addMenuItem(edit, editHandler, Text.MENU_EDIT_ADD, Style.ICON_MENU_EDIT_ADD, CodeAction.MENU_EDIT_ADD);
+        menuEdit = addMenuItem(edit, editHandler, Text.MENU_EDIT_EDIT, Style.ICON_MENU_EDIT_EDIT, CodeAction.MENU_EDIT_EDIT);
+        menuDelete = addMenuItem(edit, editHandler, Text.MENU_EDIT_DELETE, Style.ICON_MENU_EDIT_DELETE, CodeAction.MENU_EDIT_DELETE);
 
-        addMenuItem(help, Text.MENU_HELP_ABOUT, Style.ICON_MENU_HELP_ABOUT, CodeAction.MENU_HELP_ABOUT);
+        addMenuItem(view, viewHandler, Text.MENU_VIEW_OVERVIEW, Style.ICON_MENU_VIEW_OVERVIEW, CodeAction.MENU_VIEW_OVERVIEW);
+        addMenuItem(view, viewHandler, Text.MENU_VIEW_ARTICLES, Style.ICON_MENU_VIEW_ARTICLES, CodeAction.MENU_VIEW_ARTICLES);
+        addMenuItem(view, viewHandler, Text.MENU_VIEW_ACCOUNTS, Style.ICON_MENU_VIEW_ACCOUNTS, CodeAction.MENU_VIEW_ACCOUNTS);
+        addMenuItem(view, viewHandler, Text.MENU_VIEW_CURRENCIES, Style.ICON_MENU_VIEW_CURRENCIES, CodeAction.MENU_VIEW_CURRENCIES);
+        addMenuItem(view, viewHandler, Text.MENU_VIEW_STATISTICS, Style.ICON_MENU_VIEW_STATISTICS, CodeAction.MENU_VIEW_STATISTICS);
+        addMenuItem(view, viewHandler, Text.MENU_VIEW_TRANSFERS, Style.ICON_MENU_VIEW_TRANSFERS, CodeAction.MENU_VIEW_TRANSFERS);
+        addMenuItem(view, viewHandler, Text.MENU_VIEW_TRANSACTIONS, Style.ICON_MENU_VIEW_TRANSACTIONS, CodeAction.MENU_VIEW_TRANSACTIONS);
+
+        addMenuItem(help, helpHandler, Text.MENU_HELP_ABOUT, Style.ICON_MENU_HELP_ABOUT, CodeAction.MENU_HELP_ABOUT);
 
     }
 
-    private JMenuItem addMenuItem(JMenu menu, String title, ImageIcon icon, String action, int key) {
+    private JMenuItem addMenuItem(JMenu menu, Handler listener, String title, ImageIcon icon, String action, int key) {
         JMenuItem item = new JMenuItem(title);
         item.setIcon(icon);
         item.setActionCommand(action);
+        item.addActionListener(listener);
         if (key != 0) {
             KeyStroke shortKey = KeyStroke.getKeyStroke(key, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask());
             item.setAccelerator(shortKey);
@@ -74,8 +82,8 @@ public class MainMenu extends JMenuBar implements Refresh, EnableEditDelete {
         return item;
     }
 
-    private JMenuItem addMenuItem(JMenu menu, String title, ImageIcon icon, String action) {
-        return addMenuItem(menu, title, icon, action, 0);
+    private JMenuItem addMenuItem(JMenu menu, Handler listener, String title, ImageIcon icon, String action) {
+        return addMenuItem(menu, listener, title, icon, action, 0);
     }
 
     @Override

@@ -26,6 +26,14 @@ public class SaveData {
         isSaved = true;
     }
 
+    public void clear() {
+        this.accounts.clear();
+        this.articles.clear();
+        this.currencies.clear();
+        this.transfers.clear();
+        this.transactions.clear();
+    }
+
     public void load() {
         SaveLoad.load(this);
         sort();
@@ -152,7 +160,7 @@ public class SaveData {
         return null;
     }
 
-    public void updateCurrencies() {
+    public void updateCurrencies() throws Exception {
         HashMap<String, Double> rates = RateCurrency.loadRates(this.getBaseCurrency());
         for (Currency currency: currencies) {
             currency.setRate(rates.get(currency.getCode()));
@@ -161,6 +169,7 @@ public class SaveData {
         for (Account account: accounts) {
             account.getCurrency().setRate(rates.get(account.getCurrency().getCode()));
         }
+        isSaved = false;
     }
 
     @Override
@@ -175,23 +184,28 @@ public class SaveData {
     }
 
     public void setAccounts(List<Account> accounts) {
-        this.accounts = accounts;
+        if (accounts != null)
+            this.accounts = accounts;
     }
 
     public void setArticles(List<Article> articles) {
-        this.articles = articles;
+        if (articles != null)
+            this.articles = articles;
     }
 
     public void setCurrencies(List<Currency> currencies) {
-        this.currencies = currencies;
+        if (currencies != null)
+            this.currencies = currencies;
     }
 
     public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
+        if (transactions != null)
+            this.transactions = transactions;
     }
 
     public void setTransfers(List<Transfer> transfers) {
-        this.transfers = transfers;
+        if (transfers != null)
+            this.transfers = transfers;
     }
 
     public DateFilter getDateFilter() {
