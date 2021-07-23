@@ -75,8 +75,8 @@ public class FinanceKeeper {
         transactions.add(new Transaction(ac3, article1, -700, "На выходные"));
         transactions.add(new Transaction(ac3, article3, -2400, "Основаня квартира"));
         transactions.add(new Transaction(ac3, article3, -1340, "Дача"));
-        transactions.add(new Transaction(ac1, article5, 5000, new Date(new Date().getTime() - (long) 86400000 * 20)));
-        transactions.add(new Transaction(ac2, article4, 11000, "Биржа", new Date(new Date().getTime() - (long) 86400000 * 5)));
+        transactions.add(new Transaction(ac1, article5, 15000, new Date(new Date().getTime() - (long) 86400000 * 5)));
+        transactions.add(new Transaction(ac2, article4, 1100, "Биржа", new Date(new Date().getTime() - (long) 86400000 * 5)));
         transactions.add(new Transaction(ac3, article2, -210));
         transactions.add(new Transaction(ac4, article4, 1200, "На подарок"));
 

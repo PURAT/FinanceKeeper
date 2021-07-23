@@ -27,7 +27,7 @@ public final class Style {
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(5, 5, 5, 5);
     public static final EmptyBorder BORDER_BALANCE_PANEL = new EmptyBorder(10, 10, 10, 10);
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
-    public static final EmptyBorder BORDER_FILTER_PANEL = new EmptyBorder(0, 0, 7, 0);
+    public static final EmptyBorder BORDER_FILTER_PANEL = new EmptyBorder(5, 0, 7, 0);
 
     public static final int PADDING_DIALOG = 10;
     public static final int PADDING_EMPTY_PANEL = 10;
@@ -42,6 +42,7 @@ public final class Style {
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);
     public static final Dimension DIMENSION_BALANCE_PANEL = new Dimension(60, 0);
     public static final Dimension DIMENSION_TABLE_SIZE = new Dimension(845, 450);
+    public static final Dimension DIMENSION_CHART = new Dimension(845, 450);
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
 
@@ -113,8 +114,8 @@ public final class Style {
     public static final ImageIcon ICON_PANEL_TRANSACTION = new ImageIcon("images/menu_view_overview.png");
     public static final ImageIcon ICON_PANEL_ACCOUNTS = new ImageIcon("images/menu_view_accounts.png");
     public static final ImageIcon ICON_PANEL_ARTICLES = new ImageIcon("images/menu_view_articles.png");
-    public static final ImageIcon PANEL_TRANSFERS = new ImageIcon("images/menu_view_transfers.png");
     public static final ImageIcon ICON_PANEL_CURRENCIES = new ImageIcon("images/menu_view_currencies.png");
+    public static final ImageIcon PANEL_TRANSFERS = new ImageIcon("images/menu_view_transfers.png");
     public static final ImageIcon BUTTON_EDIT = new ImageIcon("images/menu_edit_edit.png") ;
     public static final ImageIcon BUTTON_DELETE = new ImageIcon("images/menu_edit_delete.png");
 }

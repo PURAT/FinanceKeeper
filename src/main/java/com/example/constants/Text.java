@@ -61,10 +61,14 @@ public final class Text {
     public static final String AMOUNT = "Сумма:";
     public static final String NOTICE = "Примечание:";
     public static final String DATE = "Дата:";
+    public static final String CHART_NO_DATA = "Нет данных за выбранный период.";
 
     // Panel items
     public static final String BALANCE_CURRENCIES = "Баланс по валютам:";
     public static final String FULL_BALANCE = "Итоговый баланс:";
+    public static final String CHART_INCOME = "Доход по счетам";
+    public static final String CHART_EXPENSE = "Расход по счетам";
+
 
 
     // FileChooser items
@@ -100,6 +104,7 @@ public final class Text {
     public static final String PANEL_ARTICLES = "Статьи";
     public static final String PANEL_TRANSFERS = "Переводы";
     public static final String PANEL_CURRENCIES = "Валюты";
+    public static final String PANEL_STATISTICS = "Статистика";
 
     // Dialogs items
     public static final String DIALOG_ABOUT_TITLE = "О программе";

@@ -33,6 +33,10 @@ public class RightPanel extends AbstractPanel {
         this(frame, tableData, title, icon, new JPanel[] {toolbar});
     }
 
+    public void setPanels(JPanel[] panels) {
+        this.panels = panels;
+    }
+
     private void enableEditDelete() {
         for (JPanel panel : panels) {
             if (panel instanceof EnableEditDelete)
@@ -68,14 +72,16 @@ public class RightPanel extends AbstractPanel {
             add(Box.createVerticalStrut(Style.PADDING_PANEL));
         }
 
-        JScrollPane scrollPane = new JScrollPane(tableData);
-        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        // fixme:  scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        if (tableData != null) {
+            JScrollPane scrollPane = new JScrollPane(tableData);
+            scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+            // fixme:  scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-        add(scrollPane);
+            add(scrollPane);
 
-        ListSelectionModel selectionModel = tableData.getSelectionModel();
-        selectionModel.addListSelectionListener((event) -> enableEditDelete());
+            ListSelectionModel selectionModel = tableData.getSelectionModel();
+            selectionModel.addListSelectionListener((event) -> enableEditDelete());
+        }
     }
 
     @Override

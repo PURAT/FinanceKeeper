@@ -39,7 +39,7 @@ public class BalanceStatistics {
 
     private static HashMap<String, Double> getDataForChart(boolean income) {
         HashMap<String, Double> data = new HashMap<>();
-        List<Transaction> transactions = SaveData.getInstance().getTransactions();
+        List<Transaction> transactions = SaveData.getInstance().getLastTransactions();
         for (Transaction transaction: transactions) {
             if ((income && transaction.getAmount() > 0) || (!income && transaction.getAmount() < 0)) {
                 String key = transaction.getArticle().getTitle();

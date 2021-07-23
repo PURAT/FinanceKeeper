@@ -5,6 +5,7 @@ import com.example.constants.Text;
 import com.example.gui.menu.MainMenu;
 import com.example.gui.panel.LeftPanel;
 import com.example.gui.panel.RightPanel;
+import com.example.gui.panel.StatisticsPanel;
 import com.example.gui.panel.TransactionPanel;
 import com.example.gui.toolbar.MainToolbar;
 
@@ -49,7 +50,7 @@ public class MainFrame extends JFrame implements Refresh {
         add(leftPanel, constraints);
 
         // right panel
-        setRightPanel(new TransactionPanel(this));
+        setRightPanel(new StatisticsPanel(this));
 
         pack();
         setLocationRelativeTo(null);
