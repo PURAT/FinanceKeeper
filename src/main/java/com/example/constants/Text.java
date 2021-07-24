@@ -153,8 +153,11 @@ public final class Text {
     public static final String ERROR_NO_BASE_CURRENCY = "Необходимо выбрать базовую валюту!";
     public static final String ERROR_UPDATE_CURRENCIES = "Не удалось обновить курсы валют!";
 
-    public static final String CONFIRM_EXIT_TEXT = "Вы действительно хотите выйти? Все несохраненные данные будут потеряны.";
+    public static final String CONFIRM_EXIT_TEXT = "Вы действительно хотите выйти? \nВсе несохраненные данные будут потеряны.";
     public static final String CONFIRM_EXIT_TITLE = "Подтверждение выхода";
+    public static final String CONFIRM_DELETE_TITLE = "Подтверждение удаления";
+    public static final String CONFIRM_DELETE_TEXT = "Вы действительно хотите удалить запись?";
+
 
 
     // Answers

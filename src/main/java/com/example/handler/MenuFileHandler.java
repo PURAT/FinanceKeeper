@@ -21,7 +21,7 @@ import static com.example.constants.Text.*;
 
 public class MenuFileHandler extends Handler {
 
-    private MainFileChooser fc;
+    private final MainFileChooser fc;
 
     public MenuFileHandler(MainFrame frame) {
         super(frame);
@@ -51,8 +51,7 @@ public class MenuFileHandler extends Handler {
                     int result = fc.save();
                     if (result == JFileChooser.APPROVE_OPTION) {
                         String path = fc.getSelectedFile().getAbsolutePath();
-                        String extension = path.substring(path.lastIndexOf("."));
-                        if (extension.equals(Settings.SAVE_FILE_EXT))
+                        if (path.endsWith("." + Settings.SAVE_FILE_EXT))
                             Settings.setFileSave(new File(path));
                         else
                             Settings.setFileSave(new File(path + "." + Settings.SAVE_FILE_EXT));
@@ -75,7 +74,7 @@ public class MenuFileHandler extends Handler {
                 if (SaveData.getInstance().isSaved())
                     System.exit(0);
                 else {
-                    int result = ConfirmDialog.show(frame, CONFIRM_EXIT_TEXT, CONFIRM_EXIT_TITLE);
+                    int result = ConfirmDialog.show(frame, CONFIRM_EXIT_TITLE, CONFIRM_EXIT_TEXT);
                     if (result == JOptionPane.YES_OPTION)
                         System.exit(0);
                 }

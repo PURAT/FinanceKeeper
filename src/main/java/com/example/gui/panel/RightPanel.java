@@ -96,4 +96,8 @@ public class RightPanel extends AbstractPanel {
                 ((Refresh) panel).refresh();
         }
     }
+
+    public TableData getTableData() {
+        return tableData;
+    }
 }

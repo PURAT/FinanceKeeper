@@ -5,6 +5,7 @@ import com.example.constants.Style;
 import com.example.constants.Text;
 import com.example.gui.EnableEditDelete;
 import com.example.gui.MainButton;
+import com.example.handler.Handler;
 
 
 public class EditToolbar extends AbstractToolbar implements EnableEditDelete {
@@ -13,8 +14,8 @@ public class EditToolbar extends AbstractToolbar implements EnableEditDelete {
     private MainButton deleteButton;
 
 
-    public EditToolbar() {
-        super(Style.BORDER_TOOLBAR);
+    public EditToolbar(Handler handler) {
+        super(Style.BORDER_TOOLBAR, handler);
     }
 
     @Override

@@ -43,9 +43,8 @@ public abstract class TableData extends JTable implements Refresh {
         Point point = getMousePosition();
         if (point != null) {
             int row = rowAtPoint(point);
-            if (row != -1) {
-                setRowSelectionInterval(row, row);
-            }
+            if (isRowSelected(row)) return super.getComponentPopupMenu();
+            else return null;
         }
         return super.getComponentPopupMenu();
     }

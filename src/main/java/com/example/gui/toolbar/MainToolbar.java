@@ -7,7 +7,7 @@ import com.example.constants.Text;
 public class MainToolbar extends AbstractToolbar {
 
     public MainToolbar() {
-        super(Style.BORDER_TOOLBAR);
+        super(Style.BORDER_TOOLBAR, null);
     }
 
     @Override

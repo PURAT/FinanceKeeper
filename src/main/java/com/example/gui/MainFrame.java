@@ -82,4 +82,12 @@ public class MainFrame extends JFrame implements Refresh {
     public MainMenu getMenu() {
         return menubar;
     }
+
+    public RightPanel getRightPanel() {
+        return rightPanel;
+    }
+
+    public LeftPanel getLeftPanel() {
+        return leftPanel;
+    }
 }

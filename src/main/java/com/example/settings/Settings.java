@@ -7,6 +7,8 @@ import org.ini4j.Wini;
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.prefs.Preferences;
 
 public final class Settings {
@@ -18,7 +20,7 @@ public final class Settings {
     private static File FILE_SAVE = new File("saves/default.fkp");
     public static final File PATH_ROBOTO_LIGHT = new File("fonts/roboto/Roboto-Light.ttf");
 
-    public static final String[] CURRENCIES_CODES = new String[] {"RUB", "USD", "EUR", "BYN", "UAH"};
+    public static final String[] CURRENCIES_CODES = new String[]{"RUB", "USD", "EUR", "BYN", "UAH"};
     public static final int COUNT_OVERVIEW_ROWS = 10;
 
     public static void init() {
@@ -31,7 +33,11 @@ public final class Settings {
                 FILE_SAVE = new File(file);
             }
         } catch (IOException e) {
-            save();
+            try {
+                if (FILE_SETTINGS.createNewFile()) save();
+            } catch (IOException ie) {
+                ie.printStackTrace();
+            }
         }
     }
 
@@ -51,7 +57,7 @@ public final class Settings {
                 ini.put("Settings", "FILE_SAVE", FILE_SAVE.getAbsolutePath().replace("\\", "\\\\"));
             ini.store();
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 

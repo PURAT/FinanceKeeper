@@ -32,7 +32,7 @@ public class CurrencyTableData extends TableData {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             Component renderer = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
             CurrencyTableModel currencyModel = (CurrencyTableModel) table.getModel();
-            Currency currency = (Currency) currencyModel.getObjectByRow(row);
+            Currency currency = (Currency) currencyModel.getCommonByRow(row);
             if (currency.isOn()) {
                 renderer.setForeground(Style.COLOR_ON);
             } else {

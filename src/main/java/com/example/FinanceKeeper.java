@@ -4,6 +4,7 @@ import com.example.exception.ModelException;
 import com.example.gui.MainFrame;
 import com.example.model.*;
 import com.example.saveload.SaveData;
+import com.example.settings.Settings;
 
 import java.awt.*;
 import java.io.IOException;
@@ -28,6 +29,7 @@ public class FinanceKeeper {
 
     private static void init() {
         try {
+            Settings.init();
             GraphicsEnvironment graphEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
             graphEnv.registerFont(Font.createFont(Font.TRUETYPE_FONT, PATH_ROBOTO_LIGHT));
         } catch (FontFormatException | IOException e) {

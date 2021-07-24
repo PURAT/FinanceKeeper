@@ -45,7 +45,7 @@ public class Chart {
         JPanel panel = new ChartPanel(chart);
         panel.setPreferredSize(DIMENSION_CHART);
         if (dataset.getItemCount() == 0) {
-            panel.setLayout(new GridLayout());
+            panel.setLayout(new GridBagLayout());
             JLabel label = new JLabel(CHART_NO_DATA);
             label.setFont(FONT_HEADER);
             panel.add(label);

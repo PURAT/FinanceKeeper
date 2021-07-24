@@ -53,7 +53,7 @@ public abstract class TableModel extends AbstractTableModel implements Refresh {
         return object.getClass();
     }
 
-    public Object getObjectByRow(int row) {
+    public Common getCommonByRow(int row) {
         return data.get(row);
     }
 }

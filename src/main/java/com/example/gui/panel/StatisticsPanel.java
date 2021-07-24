@@ -3,7 +3,6 @@ package com.example.gui.panel;
 import com.example.constants.Style;
 import com.example.gui.Chart;
 import com.example.gui.MainFrame;
-import com.example.gui.table.TableData;
 import com.example.saveload.SaveData;
 import com.example.util.BalanceStatistics;
 import org.jfree.chart.ChartPanel;
