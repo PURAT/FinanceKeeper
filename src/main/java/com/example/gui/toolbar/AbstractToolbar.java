@@ -2,21 +2,23 @@ package com.example.gui.toolbar;
 
 import com.example.gui.MainButton;
 import com.example.gui.Refresh;
+import com.example.handler.Handler;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 public abstract class AbstractToolbar extends JPanel implements Refresh {
+    private final Handler handler;
 
-    public AbstractToolbar(EmptyBorder border) {
+    public AbstractToolbar(EmptyBorder border, Handler handler) {
         super();
         setBorder(border);
+        this.handler = handler;
         init();
-
     }
 
     MainButton addButton(String title, ImageIcon icon, String action, boolean topIcon) {
-        MainButton button = new MainButton(title, icon, null, action);
+        MainButton button = new MainButton(title, icon, handler, action);
         if (topIcon) {
             button.setHorizontalTextPosition(SwingConstants.CENTER);
             button.setVerticalTextPosition(SwingConstants.BOTTOM);

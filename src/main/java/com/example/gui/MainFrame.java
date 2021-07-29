@@ -3,10 +3,7 @@ package com.example.gui;
 import com.example.constants.Style;
 import com.example.constants.Text;
 import com.example.gui.menu.MainMenu;
-import com.example.gui.panel.LeftPanel;
-import com.example.gui.panel.RightPanel;
-import com.example.gui.panel.StatisticsPanel;
-import com.example.gui.panel.TransactionPanel;
+import com.example.gui.panel.*;
 import com.example.gui.toolbar.MainToolbar;
 
 import javax.swing.*;
@@ -50,7 +47,7 @@ public class MainFrame extends JFrame implements Refresh {
         add(leftPanel, constraints);
 
         // right panel
-        setRightPanel(new StatisticsPanel(this));
+        setRightPanel(new TransactionPanel(this));
 
         pack();
         setLocationRelativeTo(null);
