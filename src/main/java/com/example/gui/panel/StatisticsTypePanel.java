@@ -25,7 +25,6 @@ public class StatisticsTypePanel extends AbstractPanel {
         setBorder(Style.BORDER_FILTER_PANEL);
         MainButton buttonType = new MainButton(title, null, CodeAction.BUTTON_TYPE);
         setBorder(Style.BORDER_FILTER_PANEL);
-
         add(buttonType);
     }
 }
