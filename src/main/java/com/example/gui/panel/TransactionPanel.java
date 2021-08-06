@@ -13,7 +13,8 @@ import javax.swing.*;
 public class TransactionPanel extends RightPanel {
 
     public TransactionPanel(MainFrame frame) {
-        super(frame, new TransactionTableData(), Text.PANEL_TRANSACTIONS, Style.ICON_PANEL_TRANSACTION,
+        super(frame, new TransactionTableData(new FunctionsHandler(frame, new TransactionAddEditDialog(frame))),
+                Text.PANEL_TRANSACTIONS, Style.ICON_PANEL_TRANSACTION,
                 new JPanel[] { new EditToolbar(new FunctionsHandler(frame, new TransactionAddEditDialog(frame))),
                                new FilterPanel(frame) });
     }

@@ -5,6 +5,7 @@ import com.example.constants.Text;
 import com.example.gui.table.model.CurrencyTableModel;
 import com.example.gui.table.model.TransferTableModel;
 import com.example.gui.table.renderer.TableCellRenderer;
+import com.example.handler.FunctionsHandler;
 import com.example.model.Currency;
 
 import javax.swing.*;
@@ -15,8 +16,8 @@ public class TransferTableData extends TableData {
     private static final String[] columns = new String[] {Text.FROM_ACCOUNT, Text.TO_ACCOUNT, Text.FROM_AMOUNT, Text.TO_AMOUNT, Text.NOTICE, Text.DATE};
     private static final ImageIcon[] icons = new ImageIcon[] {Style.ICON_ACCOUNT, Style.ICON_ACCOUNT, Style.ICON_AMOUNT, Style.ICON_AMOUNT, Style.ICON_NOTICE, Style.ICON_DATE};
 
-    public TransferTableData() {
-        super(new TransferTableModel(columns), columns, icons);
+    public TransferTableData(FunctionsHandler handler) {
+        super(new TransferTableModel(columns), handler, columns, icons);
         init();
     }
 

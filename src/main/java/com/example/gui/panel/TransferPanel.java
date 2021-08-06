@@ -13,8 +13,9 @@ import javax.swing.*;
 public class TransferPanel extends RightPanel {
 
     public TransferPanel(MainFrame frame) {
-        super(frame, new TransferTableData(), Text.PANEL_TRANSFERS, Style.PANEL_TRANSFERS,
+        super(frame, new TransferTableData(new FunctionsHandler(frame, new TransferAddEditDialog(frame))),
+                Text.PANEL_TRANSFERS, Style.PANEL_TRANSFERS,
                 new JPanel[] { new EditToolbar(new FunctionsHandler(frame, new TransferAddEditDialog(frame))),
-                               new FilterPanel(frame) });
+                        new FilterPanel(frame) });
     }
 }

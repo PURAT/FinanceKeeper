@@ -13,7 +13,8 @@ import com.example.handler.FunctionsHandler;
 public class CurrencyPanel extends RightPanel {
 
     public CurrencyPanel(MainFrame frame) {
-        super(frame, new CurrencyTableData(), Text.PANEL_CURRENCIES, Style.ICON_PANEL_CURRENCIES,
+        super(frame, new CurrencyTableData(new FunctionsHandler(frame, new CurrencyAddEditDialog(frame))),
+                Text.PANEL_CURRENCIES, Style.ICON_PANEL_CURRENCIES,
                 new EditToolbar(new FunctionsHandler(frame, new CurrencyAddEditDialog(frame))));
     }
 }

@@ -5,6 +5,7 @@ import com.example.constants.Text;
 import com.example.gui.table.model.CurrencyTableModel;
 import com.example.gui.table.model.TransactionTableModel;
 import com.example.gui.table.renderer.TableCellRenderer;
+import com.example.handler.FunctionsHandler;
 import com.example.model.Currency;
 
 import javax.swing.*;
@@ -15,8 +16,8 @@ public class CurrencyTableData extends TableData {
     private static final String[] columns = new String[] {Text.TITLE, Text.CODE, Text.RATE, Text.ON, Text.BASE};
     private static final ImageIcon[] icons = new ImageIcon[] {Style.ICON_TITLE, Style.ICON_CODE, Style.ICON_RATE, Style.ICON_ON, Style.ICON_BASE};
 
-    public CurrencyTableData() {
-        super(new CurrencyTableModel(columns), columns, icons);
+    public CurrencyTableData(FunctionsHandler handler) {
+        super(new CurrencyTableModel(columns), handler, columns, icons);
         init();
     }
 

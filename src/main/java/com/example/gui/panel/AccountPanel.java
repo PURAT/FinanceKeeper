@@ -13,7 +13,8 @@ import com.example.settings.Settings;
 public class AccountPanel extends RightPanel {
 
     public AccountPanel(MainFrame frame) {
-        super(frame, new AccountTableData(), Text.PANEL_ACCOUNTS, Style.ICON_PANEL_ACCOUNTS,
+        super(frame, new AccountTableData(new FunctionsHandler(frame, new AccountAddEditDialog(frame))),
+                Text.PANEL_ACCOUNTS, Style.ICON_PANEL_ACCOUNTS,
                 new EditToolbar(new FunctionsHandler(frame, new AccountAddEditDialog(frame))));
     }
 }

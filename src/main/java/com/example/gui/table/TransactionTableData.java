@@ -4,6 +4,7 @@ import com.example.constants.Style;
 import com.example.constants.Text;
 import com.example.gui.table.model.TransactionTableModel;
 import com.example.gui.table.renderer.TableCellRenderer;
+import com.example.handler.FunctionsHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,13 +14,13 @@ public class TransactionTableData extends TableData {
     private static final String[] columns = new String[] {Text.ARTICLE, Text.ACCOUNT, Text.AMOUNT, Text.NOTICE, Text.DATE};
     private static final ImageIcon[] icons = new ImageIcon[] {Style.ICON_ARTICLE, Style.ICON_ACCOUNT, Style.ICON_AMOUNT, Style.ICON_NOTICE, Style.ICON_DATE};
 
-    public TransactionTableData() {
-        super(new TransactionTableModel(columns), columns, icons);
+    public TransactionTableData(FunctionsHandler handler) {
+        super(new TransactionTableModel(columns), handler, columns, icons);
         init();
     }
 
-    public TransactionTableData(int count) {
-        super(new TransactionTableModel(columns, count), columns, icons);
+    public TransactionTableData(FunctionsHandler handler, int count) {
+        super(new TransactionTableModel(columns, count), handler, columns, icons);
         init();
     }
 
