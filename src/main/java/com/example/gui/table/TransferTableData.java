@@ -23,18 +23,21 @@ public class TransferTableData extends TableData {
 
     @Override
     protected final void init() {
-        getColumn(Text.AMOUNT).setCellRenderer(new TableCellAmountRenderer());
+        getColumn(Text.FROM_AMOUNT).setCellRenderer(new TableCellAmountRenderer(Style.COLOR_AMOUNT_EXPENSE));
+        getColumn(Text.TO_AMOUNT).setCellRenderer(new TableCellAmountRenderer(Style.COLOR_AMOUNT_INCOME));
     }
 
     private class TableCellAmountRenderer extends TableCellRenderer {
+        private final Color color;
+
+        public TableCellAmountRenderer(Color color) {
+            this.color = color;
+        }
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             Component renderer = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-            if ((value.toString().contains("-")))
-                renderer.setForeground(Style.COLOR_AMOUNT_EXPENSE);
-            else
-                renderer.setForeground(Style.COLOR_AMOUNT_INCOME);
+            renderer.setForeground(color);
             return renderer;
         }
     }

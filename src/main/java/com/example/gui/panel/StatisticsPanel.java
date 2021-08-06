@@ -31,7 +31,7 @@ public class StatisticsPanel extends RightPanel {
 
     @Override
     public void refresh() {
-        Chart chart = null;
+        Chart chart;
         String title;
         String currencyCode = SaveData.getInstance().getBaseCurrency().getCode();
         if (type == TYPE_INCOME) {

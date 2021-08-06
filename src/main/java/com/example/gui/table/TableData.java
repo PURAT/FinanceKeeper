@@ -14,12 +14,14 @@ import java.awt.*;
 
 public abstract class TableData extends JTable implements Refresh {
 
+    private final FunctionsHandler handler;
     private final TablePopupMenu popupMenu;
     private final String[] columns;
     private final ImageIcon[] icons;
 
     public TableData(TableModel model, FunctionsHandler handler, String[] columns, ImageIcon[] icons) {
         super(model);
+        this.handler = handler;
         this.popupMenu = new TablePopupMenu();
         this.columns = columns;
         this.icons = icons;
@@ -48,8 +50,10 @@ public abstract class TableData extends JTable implements Refresh {
         Point point = getMousePosition();
         if (point != null) {
             int row = rowAtPoint(point);
-            if (isRowSelected(row)) return super.getComponentPopupMenu();
-            else return null;
+            if (isRowSelected(row))
+                return super.getComponentPopupMenu();
+            else
+                return null;
         }
         return super.getComponentPopupMenu();
     }
@@ -70,4 +74,8 @@ public abstract class TableData extends JTable implements Refresh {
     }
 
     protected void init() { }
+
+    public FunctionsHandler getFunctionsHandler() {
+        return handler;
+    }
 }

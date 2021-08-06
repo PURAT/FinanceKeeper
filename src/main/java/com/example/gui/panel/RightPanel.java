@@ -63,13 +63,11 @@ public class RightPanel extends AbstractPanel {
         label.setAlignmentX(CENTER_ALIGNMENT);
         add(label);
 
-        if (panels.length == 0) {
-            add(Box.createVerticalStrut(Style.PADDING_EMPTY_PANEL));
-        }
+        add(Box.createVerticalStrut(Style.PADDING_EMPTY_PANEL));
 
         for (JPanel panel: panels) {
             add(panel);
-            add(Box.createVerticalStrut(Style.PADDING_PANEL));
+//            add(Box.createVerticalStrut(Style.PADDING_PANEL));
         }
 
         if (tableData != null) {

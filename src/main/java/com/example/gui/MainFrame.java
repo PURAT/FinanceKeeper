@@ -47,15 +47,13 @@ public class MainFrame extends JFrame implements Refresh {
         add(leftPanel, constraints);
 
         // right panel
-        setRightPanel(new TransactionPanel(this));
+        setRightPanel(new TransferPanel(this));
 
-        pack();
         setLocationRelativeTo(null);
-
         pack();
     }
 
-    private void setRightPanel(RightPanel panel) {
+    public void setRightPanel(RightPanel panel) {
         if (rightPanel != null)
             remove(rightPanel);
         constraints.gridy = 1;

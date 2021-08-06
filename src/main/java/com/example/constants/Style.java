@@ -23,14 +23,14 @@ public final class Style {
     public static final Font FONT_BUTTON_FILTER = new Font("Roboto-Light", Font.BOLD, 14);
 
     public static final EmptyBorder BORDER_LEFT_PANEL = new EmptyBorder(6, 20, 10, 20);
-    public static final EmptyBorder BORDER_TOOLBAR = new EmptyBorder(5, 10, 5, 10);
+    public static final EmptyBorder BORDER_TOOLBAR = new EmptyBorder(0, 10, 5, 10);
     public static final EmptyBorder BORDER_DIALOG = new EmptyBorder(5, 5, 5, 5);
     public static final EmptyBorder BORDER_BALANCE_PANEL = new EmptyBorder(10, 10, 10, 10);
     public static final EmptyBorder BORDER_PANEL = new EmptyBorder(10, 10, 10, 10);
-    public static final EmptyBorder BORDER_FILTER_PANEL = new EmptyBorder(5, 0, 7, 0);
+    public static final EmptyBorder BORDER_FILTER_PANEL = new EmptyBorder(0, 0, 10, 0);
 
     public static final int PADDING_DIALOG = 10;
-    public static final int PADDING_EMPTY_PANEL = 10;
+    public static final int PADDING_EMPTY_PANEL = 15;
     public static final int PADDING_DIALOG_LABEL = 6;
     public static final int PADDING_BALANCE_PANEL = 5;
     public static final int PADDING_LEFT_PANEL = 30;
@@ -42,7 +42,7 @@ public final class Style {
     public static final Dimension DIMENSION_DIALOG_PADDING_BUTTON = new Dimension(10, 0);
     public static final Dimension DIMENSION_BALANCE_PANEL = new Dimension(60, 0);
     public static final Dimension DIMENSION_TABLE_SIZE = new Dimension(845, 450);
-    public static final Dimension DIMENSION_CHART = new Dimension(845, 450);
+    public static final Dimension DIMENSION_CHART = new Dimension(863, 491);
 
     public static final ImageIcon ICON_MAIN = new ImageIcon("images/wallet.png");
 

@@ -35,8 +35,8 @@ public class MenuFileHandler extends Handler {
                 // TODO
                 Settings.setFileSave(null);
                 SaveData.getInstance().clear();
-            }
                 break;
+            }
             case MENU_FILE_OPEN: {
                 int result = fc.open();
                 if (result == JFileChooser.APPROVE_OPTION) {
@@ -44,8 +44,8 @@ public class MenuFileHandler extends Handler {
                     SaveData.getInstance().clear();
                     SaveData.getInstance().load();
                 }
-            }
                 break;
+            }
             case MENU_FILE_SAVE: {
                 if (Settings.getFileSave() == null) {
                     int result = fc.save();
@@ -60,16 +60,16 @@ public class MenuFileHandler extends Handler {
                 if (Settings.getFileSave() != null) {
                     SaveData.getInstance().save();
                 }
-
-            }  break;
+                break;
+            }
             case MENU_FILE_UPDATE_CURRENCIES: {
                 try {
                     SaveData.getInstance().updateCurrencies();
                 } catch (Exception exception) {
                     ErrorDialog.show(frame, ERROR_UPDATE_CURRENCIES);
                 }
-            }
                 break;
+            }
             case MENU_FILE_EXIT: {
                 if (SaveData.getInstance().isSaved())
                     System.exit(0);
