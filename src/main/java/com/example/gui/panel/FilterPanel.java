@@ -4,6 +4,7 @@ import com.example.constants.CodeAction;
 import com.example.constants.Style;
 import com.example.gui.MainButton;
 import com.example.gui.MainFrame;
+import com.example.handler.FilterHandler;
 import com.example.saveload.SaveData;
 import com.example.util.Formatter;
 
@@ -23,10 +24,10 @@ public final class FilterPanel extends AbstractPanel {
         flowLayout.setVgap(0);
         setLayout(flowLayout);
 
-        MainButton left = new MainButton(Style.ICON_BUTTON_LEFT, null, CodeAction.BUTTON_LEFT);
+        MainButton left = new MainButton(Style.ICON_BUTTON_LEFT, new FilterHandler(frame), CodeAction.BUTTON_LEFT);
         MainButton step = new MainButton(Formatter.formatDateFromTitle(SaveData.getInstance().getDateFilter()),
-                null, CodeAction.BUTTON_STEP);
-        MainButton right = new MainButton(Style.ICON_BUTTON_RIGHT, null, CodeAction.BUTTON_RIGHT);
+                new FilterHandler(frame), CodeAction.BUTTON_STEP);
+        MainButton right = new MainButton(Style.ICON_BUTTON_RIGHT, new FilterHandler(frame), CodeAction.BUTTON_RIGHT);
 
         setBorder(Style.BORDER_FILTER_PANEL);
         step.setFont(Style.FONT_BUTTON_FILTER);

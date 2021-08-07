@@ -44,7 +44,7 @@ public class DateFilter {
         offset(-1);
     }
 
-    public void setNextStep() {
+    public void nextStep() {
         step++;
         if (step > 2)
             step = STEP_DAY;
