@@ -6,6 +6,7 @@ import com.example.gui.menu.MainMenu;
 import com.example.gui.panel.*;
 import com.example.gui.toolbar.MainToolbar;
 import com.example.handler.MainToolbarHandler;
+import com.example.handler.MainWindowHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +23,7 @@ public class MainFrame extends JFrame implements Refresh {
         super(Text.PROGRAM_NAME);
         setResizable(false);
         setIconImage(Style.ICON_MAIN.getImage());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         menubar = new MainMenu(this);
         setJMenuBar(menubar);
@@ -51,6 +52,7 @@ public class MainFrame extends JFrame implements Refresh {
         setRightPanel(new TransferPanel(this));
 
         setLocationRelativeTo(null);
+        addWindowListener(new MainWindowHandler());
         pack();
     }
 
