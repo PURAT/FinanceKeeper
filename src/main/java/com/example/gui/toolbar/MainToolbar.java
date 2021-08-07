@@ -3,11 +3,12 @@ package com.example.gui.toolbar;
 import com.example.constants.CodeAction;
 import com.example.constants.Style;
 import com.example.constants.Text;
+import com.example.handler.MainToolbarHandler;
 
 public class MainToolbar extends AbstractToolbar {
 
-    public MainToolbar() {
-        super(Style.BORDER_TOOLBAR, null);
+    public MainToolbar(MainToolbarHandler handler) {
+        super(Style.BORDER_TOOLBAR, handler);
     }
 
     @Override

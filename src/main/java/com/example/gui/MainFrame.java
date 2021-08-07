@@ -5,6 +5,7 @@ import com.example.constants.Text;
 import com.example.gui.menu.MainMenu;
 import com.example.gui.panel.*;
 import com.example.gui.toolbar.MainToolbar;
+import com.example.handler.MainToolbarHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,7 +36,7 @@ public class MainFrame extends JFrame implements Refresh {
         constraints.gridy = 0;
         constraints.gridwidth = 2;
 
-        toolbar = new MainToolbar();
+        toolbar = new MainToolbar(new MainToolbarHandler(this));
         add(toolbar, constraints);
 
         // left panel
