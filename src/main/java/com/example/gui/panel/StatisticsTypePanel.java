@@ -4,6 +4,7 @@ import com.example.constants.CodeAction;
 import com.example.constants.Style;
 import com.example.gui.MainButton;
 import com.example.gui.MainFrame;
+import com.example.handler.ChartHandler;
 
 import java.awt.*;
 
@@ -23,7 +24,7 @@ public class StatisticsTypePanel extends AbstractPanel {
         flowLayout.setVgap(0);
         setLayout(flowLayout);
         setBorder(Style.BORDER_FILTER_PANEL);
-        MainButton buttonType = new MainButton(title, null, CodeAction.BUTTON_TYPE);
+        MainButton buttonType = new MainButton(title, new ChartHandler(frame), CodeAction.BUTTON_TYPE);
         setBorder(Style.BORDER_FILTER_PANEL);
         add(buttonType);
     }
