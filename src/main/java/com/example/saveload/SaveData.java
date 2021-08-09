@@ -136,8 +136,9 @@ public class SaveData {
 
     public void edit(Common oldData, Common newData) throws ModelException {
         List list = getList(oldData);
-        if (list.contains(newData) && oldCommon != list.get(list.indexOf(newData)))
-            throw new ModelException(ModelException.IS_EXISTS);
+        //fixme
+//        if (list.contains(newData) && oldCommon != list.get(list.indexOf(newData)))
+//            throw new ModelException(ModelException.IS_EXISTS);
         list.set(list.indexOf(oldData), newData);
         oldCommon = oldData;
         newData.postEdit(this);
