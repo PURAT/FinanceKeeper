@@ -47,7 +47,7 @@ public class CurrencyAddEditDialog extends AbstractAddEditDialog {
     }
 
     @Override
-    protected Common getCommonFromForm() throws ModelException {
+    public Common getCommonFromForm() throws ModelException {
         try {
             String title = ((JTextField) components.get(Text.TITLE)).getText();
             String rate = ((JTextField) components.get(Text.RATE)).getText();

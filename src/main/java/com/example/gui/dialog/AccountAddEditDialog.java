@@ -41,10 +41,10 @@ public class AccountAddEditDialog extends AbstractAddEditDialog {
     }
 
     @Override
-    protected Common getCommonFromForm() throws ModelException {
+    public Common getCommonFromForm() throws ModelException {
         try {
             String title = ((JTextField) components.get(Text.TITLE)).getText();
-            String startAmount = ((JTextField) components.get(Text.CURRENCY)).getText();
+            String startAmount = ((JTextField) components.get(Text.START_AMOUNT)).getText();
             Currency currency = (Currency) ((CommonComboBox) components.get(Text.CURRENCY)).getSelectedItem();
             return new Account(title, currency, Formatter.formatAmountToNumber(startAmount));
         } catch (NumberFormatException e) {

@@ -20,6 +20,8 @@ public class Currency extends Common {
         this.rate = rate;
         this.isOn = isOn;
         this.isBase = isBase;
+        if (this.isBase)
+            this.isOn = true;
 
         checkOnException();
     }
@@ -36,9 +38,18 @@ public class Currency extends Common {
     @Override
     public void postEdit(SaveData data) {
         clearBaseCurrency(data);
-        for (Account account: data.getAccounts()) {
-            if (account.getCurrency().equals(data.getOldCommon()))
-                account.setCurrency(this);
+        for (Account a: data.getAccounts()) {
+            if (a.getCurrency().equals(data.getOldCommon()))
+                a.setCurrency(this);
+            for (Transaction t: data.getTransactions())
+                if (t.getAccount().getCurrency().equals(data.getOldCommon()))
+                    t.getAccount().setCurrency(this);
+            for (Transfer t: data.getTransfers()) {
+                if (t.getFromAccount().getCurrency().equals(data.getOldCommon()))
+                    t.getFromAccount().setCurrency(this);
+                if (t.getToAccount().getCurrency().equals(data.getOldCommon()))
+                    t.getToAccount().setCurrency(this);
+            }
         }
     }
 

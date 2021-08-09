@@ -51,7 +51,7 @@ public class TransactionAddEditDialog extends AbstractAddEditDialog {
     }
 
     @Override
-    protected Common getCommonFromForm() throws ModelException {
+    public Common getCommonFromForm() throws ModelException {
         try {
             Account account = (Account) ((CommonComboBox) components.get(Text.ACCOUNT)).getSelectedItem();
             Article article = (Article) ((CommonComboBox) components.get(Text.ARTICLE)).getSelectedItem();

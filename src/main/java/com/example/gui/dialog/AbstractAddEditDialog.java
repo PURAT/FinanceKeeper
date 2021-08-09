@@ -6,6 +6,7 @@ import com.example.constants.Text;
 import com.example.exception.ModelException;
 import com.example.gui.MainButton;
 import com.example.gui.MainFrame;
+import com.example.handler.AddEditDialogHandler;
 import com.example.model.Common;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
@@ -18,13 +19,16 @@ import java.util.Map;
 
 public abstract class AbstractAddEditDialog extends JDialog {
 
+    protected Common c;
+    private final MainFrame frame;
     protected LinkedHashMap<String, JComponent> components = new LinkedHashMap<>();
     protected LinkedHashMap<String, ImageIcon> icons = new LinkedHashMap<>();
     protected LinkedHashMap<String, Object> values = new LinkedHashMap<>();
-    protected Common c;
 
     public AbstractAddEditDialog(MainFrame frame) {
         super(frame, Text.ADD, true);
+        this.frame = frame;
+        addWindowListener(new AddEditDialogHandler(frame, this));
         setResizable(false);
     }
 
@@ -87,6 +91,7 @@ public abstract class AbstractAddEditDialog extends JDialog {
                 if (values.containsKey(key))
                     ((UtilDateModel) ((JDatePickerImpl) component).getModel()).setValue((Date) values.get(key));
             }
+            component.addKeyListener(new AddEditDialogHandler(frame, this));
             component.setAlignmentX(JComponent.LEFT_ALIGNMENT);
 
             add(label);
@@ -95,13 +100,13 @@ public abstract class AbstractAddEditDialog extends JDialog {
             add(Box.createVerticalStrut(Style.PADDING_DIALOG));
         }
 
-        MainButton ok = new MainButton(Text.ADD, Style.ICON_BUTTON_OK, null, CodeAction.BUTTON_ADD);
+        MainButton ok = new MainButton(Text.ADD, Style.ICON_BUTTON_OK, new AddEditDialogHandler(frame, this), CodeAction.BUTTON_ADD);
         if (!isAdd()) {
             ok.setText(Text.EDIT);
             ok.setActionCommand(CodeAction.BUTTON_EDIT);
         }
 
-        MainButton cancel = new MainButton(Text.CANCEL, Style.ICON_BUTTON_CANCEL, null, CodeAction.BUTTON_CANCEL);
+        MainButton cancel = new MainButton(Text.CANCEL, Style.ICON_BUTTON_CANCEL, new AddEditDialogHandler(frame, this), CodeAction.BUTTON_CANCEL);
 
         JPanel panelButtons = new JPanel();
         panelButtons.setLayout(new BorderLayout());
@@ -120,7 +125,7 @@ public abstract class AbstractAddEditDialog extends JDialog {
 
     protected abstract void setValues();
 
-    protected abstract Common getCommonFromForm() throws ModelException;
+    public abstract Common getCommonFromForm() throws ModelException;
 
 
     static class CommonComboBox extends JComboBox<Object> {
