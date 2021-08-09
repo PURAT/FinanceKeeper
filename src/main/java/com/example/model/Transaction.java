@@ -69,6 +69,8 @@ public class Transaction extends Common {
             throw new ModelException(ModelException.ARTICLE_EMPTY);
         if (account == null)
             throw new ModelException(ModelException.ACCOUNT_EMPTY);
+        if (date == null)
+            throw new ModelException(ModelException.DATE_FORMAT);
     }
 
     @Override

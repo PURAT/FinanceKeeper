@@ -71,6 +71,8 @@ public class Transfer extends Common {
             throw new ModelException(ModelException.ACCOUNT_EMPTY);
         if (fromAmount < 0 || toAmount < 0)
             throw new ModelException(ModelException.AMOUNT_FORMAT);
+        if (date == null)
+            throw new ModelException(ModelException.DATE_FORMAT);
     }
 
     @Override
