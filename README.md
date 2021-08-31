@@ -4,8 +4,8 @@
 
 
 
-  ![Редактирование записей](screenshots/editing.png)  
+  ![Редактирование записей](screenshots/editing.PNG)  
    ---------- ---
-  ![Последние транзакции](screenshots/last_transaction.png)  
+  ![Последние транзакции](screenshots/last_transaction.PNG)  
    ---------- ---  
-  ![Диаграмма расходов и доходов](screenshots/diagram.png)  
+  ![Диаграмма расходов и доходов](screenshots/diagram.PNG)  
